@@ -8,7 +8,7 @@
 **Extend optional deal–contact association support in the Open WebUI Workspace Tool adapter**, preserving the verified two-file contacts/deals workflow and the existing deterministic audit rules.
 
 ### Next tiny action
-**Add a regression test for the adapter's existing two-file workflow** before extending it to forward an optional associations CSV. Use synthetic fixtures only.
+**Add a failing regression test for the optional three-file association upload**, while retaining the verified two-file regression test. Use synthetic data only.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -16,6 +16,8 @@
 - Standalone FastAPI `GET /health` returned HTTP 200; multipart `POST /audit` returned HTTP 200 with an audit ZIP.
 - Open WebUI **Auditor Adapter** successfully processed synthetic contacts and deals CSVs and returned the expected summary and report.
 - Verified synthetic result: **202 contacts**, **121 deals**, **92 medium findings**, all `CRM-DEAL-OWNER-MISSING`.
+- The two-file Open WebUI adapter regression test passed locally (1 test, 2026-11-05); committed as `ff570a2`.
+- Added `tests/fixtures/README.md` for reusable synthetic fixture policy and `docs/definition-of-done.md` for permanent milestone acceptance criteria.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -25,7 +27,7 @@
 | FastAPI source, dependencies, tests and synthetic fixtures | Complete | Commit `2d64691` |
 | Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
 | Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
-| Optional association input in conversational adapter | **Current** | Regression test, then optional upload and focused tests |
+| Optional association input in conversational adapter | **Current** | Two-file regression passed; add three-file test, then optional upload |
 | Full association and freshness audit coverage | Pending | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
 | Portable deployment and operational checks | Pending | Documented reproducible Podman validation |
@@ -49,6 +51,7 @@
 - [Architecture](docs/architecture.md)
 - [Integration](docs/integration.md)
 - [Validation](docs/validation.md)
+- [Definition of done](docs/definition-of-done.md)
 - [Security](docs/security.md)
 - [Deployment](docs/deployment.md)
 - [Decisions](docs/decisions.md)
