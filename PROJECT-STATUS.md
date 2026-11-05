@@ -1,57 +1,54 @@
 # Project status — S02 CRM Data Quality & Freshness Auditor
 
-**Last updated:** 2026-10-26  
-**Phase:** Working synthetic-data MVP; source-control and reproducibility gap.  
+**Last updated:** 2026-11-05  
+**Phase:** Verified synthetic-data MVP; incremental audit-coverage development.  
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Transfer the existing, verified local FastAPI application source, dependency manifest and tests from the Mac to this repository.** The GitHub repository currently contains documentation and the Open WebUI Workspace Tool adapter, but **not** the original FastAPI implementation.
+**Extend optional deal–contact association support in the Open WebUI Workspace Tool adapter**, preserving the verified two-file contacts/deals workflow and the existing deterministic audit rules.
 
 ### Next tiny action
-**Identify the working local S02 project folder and list its files**, so we can choose exactly what to commit without copying the virtual environment, credentials, customer data or generated ZIPs. Do not recreate source code from documentation.
+**Add a regression test for the adapter's existing two-file workflow** before extending it to forward an optional associations CSV. Use synthetic fixtures only.
 
 ### Last completed
-- Merged S02 repository foundation and Open WebUI adapter into `main` (commit `bc34183`).
-- Merged related portfolio registry, documentation governance and shared-core checkpoint into portfolio `main` (commit `8a78290`).
-- Confirmed standalone FastAPI and Open WebUI Workspace Tool conversational audit paths with synthetic data.
-- Documented security and integration limitations in `docs/`.
+- S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
+- On 2026-11-05, all four automated tests passed using the project Python 3.11.5 environment.
+- Standalone FastAPI `GET /health` returned HTTP 200; multipart `POST /audit` returned HTTP 200 with an audit ZIP.
+- Open WebUI **Auditor Adapter** successfully processed synthetic contacts and deals CSVs and returned the expected summary and report.
+- Verified synthetic result: **202 contacts**, **121 deals**, **92 medium findings**, all `CRM-DEAL-OWNER-MISSING`.
+- Approved architecture and audit rules remain unchanged.
 
-## Verified evidence (historical local tests; not rerun from GitHub)
-- Local FastAPI: `GET /health`; `POST /audit` accepts required `contacts`, `deals` and optional `associations` multipart fields; returns ZIP containing `summary.json`, `issues.csv`, `report.md`.
-- Synthetic inputs: 202 contacts and 121 deals; 92 medium findings of type `CRM-DEAL-OWNER-MISSING`.
-- Open WebUI Workspace Tool adapter successfully forwards `contacts.csv` and `deals.csv` to the local API and returns deterministic summary and report text.
-- Direct OpenAPI External Tool Server `/audit` from chat failed HTTP 422 due to missing multipart attachments. `/health` working does not validate file upload.
-- Optional associations are not supported by the current Workspace Tool adapter; freshness and reconciliation coverage remain incomplete.
-
-## Implementation plan / checkpoints
-| Checkpoint | State | Next evidence |
+## Implementation checkpoints
+| Checkpoint | State | Evidence or next requirement |
 | --- | --- | --- |
-| S02 repository docs, adapter and portfolio links | Complete | Merged to `main` |
-| Original FastAPI source and dependency manifest | **Current** | Transfer verified local files without secrets or generated artifacts |
-| Source-controlled tests and fixtures | Pending | Import original tests or add explicitly reviewed synthetic tests |
-| Fresh checkout standalone audit | Pending | Run health, multipart audit and inspect ZIP |
-| Fresh checkout Open WebUI chat audit | Pending | Attach two synthetic CSVs; verify tool result and model explanation |
-| Optional associations and freshness coverage | Pending | Agree rules and test representative fixtures |
+| Repository documentation and integration adapter | Complete | Available on `main` |
+| FastAPI source, dependencies, tests and synthetic fixtures | Complete | Commit `2d64691` |
+| Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
+| Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
+| Optional association input in conversational adapter | **Current** | Regression test, then optional upload and focused tests |
+| Full association and freshness audit coverage | Pending | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
-| Portable deployment and operational checks | Pending | Reproduce on documented Podman environment |
+| Portable deployment and operational checks | Pending | Documented reproducible Podman validation |
 | Customer/commercial validation | Pending | Separate from technical acceptance |
 
-## Decisions and constraints
-- Both standalone FastAPI and Open WebUI conversational workflows are required MVP scenarios.
-- Keep deterministic audit rules authoritative; hosted AI may explain results but should not invent findings.
-- **Synthetic data only:** hosted model can receive tool output, and SEC-001 outbound-data controls are not implemented.
-- Do not change approved architecture v0.1, create `ai-services-core`, or alter repositories beyond agreed scope without owner approval.
-- Shared-core checkpoint at each verified solution milestone: review common functions, integration utilities, tests and documentation; record whether to defer, reference or propose extraction. Initial S02 outcome: **defer extraction until reuse is demonstrated**.
+## Known limitations and boundaries
+- The FastAPI endpoint accepts optional `associations` input and validates references present in the file; the Open WebUI adapter currently forwards only contacts and deals. A partial association reference file cannot establish which deals have no associations.
+- Original close-date values and extract timestamps are unavailable for full reconciliation and freshness evaluation.
+- Direct OpenAPI External Tool Server `/audit` upload previously failed HTTP 422 due to missing multipart attachments. **Do not confuse this with the verified Open WebUI Auditor Adapter.**
+- Deterministic Python/SQL rules own findings; hosted AI may explain results, not invent them.
+- **Synthetic data only.** SEC-001 is not implemented; no real customer CRM data or production-readiness claims.
+- Preserve the approved modular FastAPI/Open WebUI/Podman architecture. Defer `ai-services-core` extraction until actual cross-service reuse is demonstrated.
 
-## Resume instructions for a new chat
+## Resume instructions
 1. Read this file and the [portfolio status](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/PROJECT-STATUS.md).
-2. Confirm the working tree/repository state before changes.
-3. Continue from **Next tiny action**, one small step at a time.
-4. At the end of each meaningful step, update this file and recommend a GitHub commit if files changed.
+2. Continue from **Next tiny action**, one incremental, verifiable change at a time.
+3. Update this service status after meaningful milestones; update portfolio status only for portfolio-level changes.
 
 ## Reference documents
 - [Service specification](docs/service-specification.md)
-- [Integration instructions](docs/integration.md)
-- [Validation evidence](docs/validation.md)
-- [Security limitations](docs/security.md)
-- [Portfolio architecture baseline](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/architecture/baseline-v0.1.md)
+- [Architecture](docs/architecture.md)
+- [Integration](docs/integration.md)
+- [Validation](docs/validation.md)
+- [Security](docs/security.md)
+- [Deployment](docs/deployment.md)
+- [Decisions](docs/decisions.md)
