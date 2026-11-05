@@ -2,7 +2,7 @@
 
 AI-assisted CRM data quality and freshness auditing using deterministic Python/FastAPI checks and Open WebUI conversational reporting.
 
-**Status:** Working synthetic-data MVP integration; **not production-ready**. Original FastAPI source and dependencies still need to be imported from the verified local project.
+**Status:** Working synthetic-data MVP with FastAPI, deterministic audit rules, automated tests, and Open WebUI integration; **not production-ready**.
 
 ## Navigation
 - [Service specification](docs/service-specification.md)
@@ -19,6 +19,6 @@ AI-assisted CRM data quality and freshness auditing using deterministic Python/F
 
 **Security:** SEC-001 sensitivity tagging/manual approval is **not implemented**. Use synthetic data only. Do not upload real customer CRM data to this MVP.
 
-**Source transfer required:** This repository currently contains the adapter and documentation, **not** the existing local FastAPI application, tests or dependency manifest. Copy those from the working local checkout before treating this repository as executable.
+**Source code:** The standalone FastAPI application, tests, dependency manifests, and synthetic sample files are maintained in this repository.
 
 **Shared-core checkpoint:** Review potential `ai-services-core` reuse at every verified solution milestone; do not create shared infrastructure without demonstrated reuse and approved change control.
