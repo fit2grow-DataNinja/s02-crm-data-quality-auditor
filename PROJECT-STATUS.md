@@ -5,10 +5,10 @@
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Optional association CSV forwarding milestone complete**: automated regression and a live synthetic three-file Open WebUI audit are verified. The portfolio MVP acceptance checklist is now separated from production-readiness requirements in `docs/definition-of-done.md`.
+**Core synthetic audit rules and three-file integration have regression evidence**; the latest full suite passed 8 tests. The portfolio MVP remains in final acceptance review, separate from production readiness.
 
 ### Next tiny action
-**Add one focused missing-deal-owner regression test** using synthetic data, then run the full suite and record the actual result. Keep the portfolio MVP scope compact.
+**Review the Portfolio MVP acceptance checklist** against existing evidence and identify the smallest outstanding verification gap; avoid expanding the commercial backlog into the MVP.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -25,6 +25,7 @@
 - Added an API-level negative-association regression test in commit `31782c5`; the user reported the full 7-test suite passed on 2026-11-06 (recorded in `docs/validation.md`).
 - Scope decision: complete a compact, synthetic-data-only Variant 1 portfolio MVP, then compare with a ChatGPT Skill-based Variant 2 using shared synthetic inputs and acceptance criteria. Full production/commercial backlog is explicitly deferred; see `docs/definition-of-done.md`.
 - Documented deliberately deferred commercial/production requirements in `docs/commercial-readiness-backlog.md`, separate from the synthetic-only MVP acceptance gate.
+- Added focused missing-deal-owner regression test in commit `db6519c`; user reported `Ran 8 tests ... OK` on 2026-11-06. The run is recorded in `docs/validation.md`.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
