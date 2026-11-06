@@ -16,7 +16,7 @@ This checklist applies to **each meaningful S02 feature, fix, or integration mil
 - [ ] Evidence, test commands and outstanding issues are recorded before declaring the portfolio MVP complete.
 
 ### Production readiness (separate, deferred gate)
-Customer-data processing requires implemented and tested SEC-001 sensitivity classification, manual approval and fail-closed controls, plus appropriate operational security, deployment reliability, monitoring, performance, comprehensive business-rule/source-data validation and acceptance evidence. **Do not treat portfolio MVP acceptance as production clearance.**
+Customer-data processing requires implemented and tested SEC-001 sensitivity classification, manual approval and fail-closed controls, plus appropriate operational security, deployment reliability, monitoring, performance, comprehensive business-rule/source-data validation and acceptance evidence. **Do not treat portfolio MVP acceptance as production clearance.** The detailed, intentionally deferred work inventory and its evidence expectations are maintained in the [commercial readiness backlog](commercial-readiness-backlog.md); this checklist remains the authority for MVP acceptance.
 
 ### Variant 2: ChatGPT Skill comparison (after Variant 1)
 Develop a reusable skill-based workflow for the same synthetic CRM audit scenario and compare both variants using shared datasets and criteria: finding accuracy, repeatability, explainability, setup/maintenance effort and security boundaries. Prefer executable deterministic checks where the skill environment supports them; do not claim instructions alone guarantee deterministic results.
