@@ -5,7 +5,7 @@
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Core synthetic audit rules and three-file integration have regression evidence**; the latest full suite passed 8 tests. The portfolio MVP remains in final acceptance review, separate from production readiness.
+**Core synthetic audit rules and three-file integration have regression evidence**; the latest user-reported full suite passed 9 tests. The portfolio MVP remains in final acceptance review, separate from production readiness.
 
 ### Next tiny action
 **Review final audit report coverage and limitation wording** against actual output generation, then finalize the Variant 1 case study and acceptance evidence. Do not expand CRM rules merely to increase scope.
@@ -28,6 +28,7 @@
 - Added focused missing-deal-owner regression test in commit `db6519c`; user reported `Ran 8 tests ... OK` on 2026-11-06. The run is recorded in `docs/validation.md`.
 - Reviewed the seven Variant 1 MVP acceptance criteria: core regression and integration evidence are present; adapter missing-required-file evidence, final report review, and case-study/evidence sign-off remain to close. Corrected stale deployment and service-specification statements. No production-readiness claim.
 - Missing-required-deals adapter regression committed as `2f163e6`; user reported `Ran 9 tests ... OK` on 2026-11-06. The adapter rejects the missing required file before any HTTP upload.
+- Added a reviewer-oriented Open WebUI walkthrough in `docs/integration.md`, including a sample chat request, tool-result verification, optional association support and troubleshooting; documentation only, no new test execution.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -36,8 +37,8 @@
 | Repository documentation and integration adapter | Complete | Available on `main` |
 | FastAPI source, dependencies, tests and synthetic fixtures | Complete | Commit `2d64691` |
 | Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
-| Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
-| Optional association input in conversational adapter | **Complete for synthetic MVP** | 2 adapter tests and 6 total tests passed; live three-file Open WebUI audit reported expected results |
+| Open WebUI Workspace Tool conversational audit | Complete for required CSVs and optional associations | 2026-11-05 synthetic adapter verification |
+| Optional association input in conversational adapter | **Complete for synthetic MVP** | 9-test full suite passed (user-reported); live three-file Open WebUI audit reported expected results |
 | Portfolio MVP scope and two-variant plan | Defined | Portfolio MVP acceptance distinct from production gate in definition of done |
 | Full association and freshness audit coverage | Deferred beyond portfolio MVP | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
