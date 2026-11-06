@@ -5,10 +5,10 @@
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Optional association CSV forwarding is implemented and regression-verified** in the Open WebUI Workspace Tool adapter. The broader service remains in active development.
+**Optional association CSV forwarding milestone complete**: automated regression and a live synthetic three-file Open WebUI audit are verified. The broader service remains in active development.
 
 ### Next tiny action
-**Verify the updated Open WebUI Workspace Tool in a live synthetic three-file upload** (contacts, deals, optional associations) and inspect the returned ZIP/report. The automated adapter tests mock HTTP and do not replace a live integration check.
+**Add a negative regression case for an invalid association reference** (synthetic deal–contact link to an unknown record), then verify the deterministic rule output. Keep the next change small and test-first.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -21,6 +21,7 @@
 - Test-first cycle verified: new three-file adapter test failed for the missing multipart field while two-file regression passed; adapter fixed in commit `468b04e`.
 - On 2026-11-06, the focused adapter suite passed (2/2), and the full `python -m unittest discover -s tests -v` suite passed (6 tests in 0.065s) in the project's `.venv`.
 - `requirements-test.txt` already declares `httpx2`; it was missing from the active environment until installed. Dependency declaration is not a guarantee that existing environments are provisioned; reproducible fresh-environment/CI verification remains pending.
+- Live Open WebUI Workspace Tool audit with three synthetic files reported 1 contact, 1 deal, 1 known association, 0 findings, and partial-reference-only association coverage (user-provided response, 2026-11-06). The tool response did not separately expose raw multipart/ZIP evidence, so this is a successful end-to-end reported result, not an independent wire-level capture.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -30,14 +31,14 @@
 | FastAPI source, dependencies, tests and synthetic fixtures | Complete | Commit `2d64691` |
 | Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
 | Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
-| Optional association input in conversational adapter | **Code and automated regression verified** | 2 adapter tests and 6 total tests passed; live three-file Open WebUI check pending |
+| Optional association input in conversational adapter | **Complete for synthetic MVP** | 2 adapter tests and 6 total tests passed; live three-file Open WebUI audit reported expected results |
 | Full association and freshness audit coverage | Pending | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
 | Portable deployment and operational checks | Pending | Documented reproducible Podman validation |
 | Customer/commercial validation | Pending | Separate from technical acceptance |
 
 ## Known limitations and boundaries
-- The FastAPI endpoint accepts optional `associations` input and validates references present in the file; the Open WebUI adapter now forwards optional associations; a live three-file Workspace Tool verification remains pending. A partial association reference file cannot establish which deals have no associations.
+- The FastAPI endpoint accepts optional `associations` input and validates references present in the file; the Open WebUI adapter now forwards optional associations, and the live synthetic three-file workflow was verified by its reported results. A partial association reference file cannot establish which deals have no associations.
 - Original close-date values and extract timestamps are unavailable for full reconciliation and freshness evaluation.
 - Direct OpenAPI External Tool Server `/audit` upload previously failed HTTP 422 due to missing multipart attachments. **Do not confuse this with the verified Open WebUI Auditor Adapter.**
 - Deterministic Python/SQL rules own findings; hosted AI may explain results, not invent them.
