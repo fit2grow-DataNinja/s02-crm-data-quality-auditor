@@ -20,4 +20,10 @@ Test dependency note: `requirements-test.txt` already lists `httpx2`. The local 
 
 Missing-required-file adapter regression: 2026-11-06 user-reported full suite passed 9/9 after commit `2f163e6`; test verifies missing `deals.csv` yields an explicit error without an HTTP request, even when optional associations are attached.
 
-Next: inspect final audit report wording and coverage/limitations against actual implementation; CI/container hardening remains deferred.
+## Final report coverage review (documentation sign-off, 2026-11-06)
+
+Reviewed `s02/audit.py` output construction against the documented workflow (source inspection only; no new local run). `report.md` includes contact/deal counts, total findings, findings grouped by rule, explicit `Checks not fully evaluated` entries from `summary.coverage`, provisional-rule interpretation and recommended review. `summary.json` includes severity and rule counts, coverage flags and run time; `issues.csv` contains record-level findings.
+
+**Remaining reporting limitation:** `report.md` lists rules with findings but does **not** enumerate every rule that was evaluated successfully. A zero-finding report therefore means no violations detected among implemented checks, **not** that every possible CRM quality check was performed. The coverage flags correctly identify absent association exports, partial association references, unavailable freshness timestamps and unavailable original close-date values. The report's phrase `No external AI was used` describes deterministic report generation, not the later Open WebUI AI explanation.
+
+The documentation and case study may be finalized for Variant 1. The stronger acceptance criterion that output *explicitly lists all evaluated checks* remains **open** pending a report-format enhancement and verification; do not mark that criterion passed on documentation alone. CI/container portability, explanation-faithfulness testing and SEC-001 remain deferred or unverified as documented.
