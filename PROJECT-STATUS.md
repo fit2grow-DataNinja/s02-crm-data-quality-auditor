@@ -8,7 +8,7 @@
 **Core synthetic audit rules and three-file integration have regression evidence**; the latest full suite passed 8 tests. The portfolio MVP remains in final acceptance review, separate from production readiness.
 
 ### Next tiny action
-**Verify the Open WebUI adapter's missing-required-file error path** with one focused synthetic regression test or existing test evidence, then review report coverage and finalize the Variant 1 case study. Do not add new CRM rules merely to expand scope.
+**Review final audit report coverage and limitation wording** against actual output generation, then finalize the Variant 1 case study and acceptance evidence. Do not expand CRM rules merely to increase scope.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -27,6 +27,7 @@
 - Documented deliberately deferred commercial/production requirements in `docs/commercial-readiness-backlog.md`, separate from the synthetic-only MVP acceptance gate.
 - Added focused missing-deal-owner regression test in commit `db6519c`; user reported `Ran 8 tests ... OK` on 2026-11-06. The run is recorded in `docs/validation.md`.
 - Reviewed the seven Variant 1 MVP acceptance criteria: core regression and integration evidence are present; adapter missing-required-file evidence, final report review, and case-study/evidence sign-off remain to close. Corrected stale deployment and service-specification statements. No production-readiness claim.
+- Missing-required-deals adapter regression committed as `2f163e6`; user reported `Ran 9 tests ... OK` on 2026-11-06. The adapter rejects the missing required file before any HTTP upload.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
