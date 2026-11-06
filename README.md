@@ -11,6 +11,7 @@ AI-assisted CRM data quality and freshness auditing using deterministic Python/F
 - [Local deployment](docs/deployment.md)
 - [Validation evidence](docs/validation.md)
 - [Security and SEC-001 limitations](docs/security.md)
+- [Commercial readiness backlog (deferred beyond MVP)](docs/commercial-readiness-backlog.md)
 - [Service-specific decisions](docs/decisions.md)
 - [Open WebUI Workspace Tool source](integrations/openwebui/s02_csv_audit_adapter.py)
 - [Portfolio governance and approved architecture](https://github.com/bb-DataNinja/ai-services-portfolio)
