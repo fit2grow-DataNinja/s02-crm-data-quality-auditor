@@ -1,14 +1,14 @@
 # Project status — S02 CRM Data Quality & Freshness Auditor
 
 **Last updated:** 2026-11-06  
-**Phase:** Verified synthetic-data MVP; incremental audit-coverage development.  
+**Phase:** Variant 1 portfolio MVP completion (synthetic-data-only); Variant 2 ChatGPT Skill comparison planned.  
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Optional association CSV forwarding milestone complete**: automated regression and a live synthetic three-file Open WebUI audit are verified. The broader service remains in active development.
+**Optional association CSV forwarding milestone complete**: automated regression and a live synthetic three-file Open WebUI audit are verified. The portfolio MVP acceptance checklist is now separated from production-readiness requirements in `docs/definition-of-done.md`.
 
 ### Next tiny action
-**Add a negative regression case for an invalid association reference** (synthetic deal–contact link to an unknown record), then verify the deterministic rule output. Keep the next change small and test-first.
+**Run the current full regression suite after pulling the newly committed API negative-association test** (`tests/test_api.py`, commit `31782c5`); record the actual result before marking it passed. Continue one small verifiable action at a time.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -22,6 +22,8 @@
 - On 2026-11-06, the focused adapter suite passed (2/2), and the full `python -m unittest discover -s tests -v` suite passed (6 tests in 0.065s) in the project's `.venv`.
 - `requirements-test.txt` already declares `httpx2`; it was missing from the active environment until installed. Dependency declaration is not a guarantee that existing environments are provisioned; reproducible fresh-environment/CI verification remains pending.
 - Live Open WebUI Workspace Tool audit with three synthetic files reported 1 contact, 1 deal, 1 known association, 0 findings, and partial-reference-only association coverage (user-provided response, 2026-11-06). The tool response did not separately expose raw multipart/ZIP evidence, so this is a successful end-to-end reported result, not an independent wire-level capture.
+- Added an API-level negative-association regression test in commit `31782c5`; its execution is still pending user confirmation.
+- Scope decision: complete a compact, synthetic-data-only Variant 1 portfolio MVP, then compare with a ChatGPT Skill-based Variant 2 using shared synthetic inputs and acceptance criteria. Full production/commercial backlog is explicitly deferred; see `docs/definition-of-done.md`.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -32,7 +34,8 @@
 | Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
 | Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
 | Optional association input in conversational adapter | **Complete for synthetic MVP** | 2 adapter tests and 6 total tests passed; live three-file Open WebUI audit reported expected results |
-| Full association and freshness audit coverage | Pending | Complete source exports, timestamps and agreed rule criteria |
+| Portfolio MVP scope and two-variant plan | Defined | Portfolio MVP acceptance distinct from production gate in definition of done |
+| Full association and freshness audit coverage | Deferred beyond portfolio MVP | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
 | Portable deployment and operational checks | Pending | Documented reproducible Podman validation |
 | Customer/commercial validation | Pending | Separate from technical acceptance |
