@@ -65,7 +65,7 @@ def audit(contacts_path, deals_path, associations_path=None, *, run_time=None):
         # Association import/reference file is a subset, not a full CRM export.
         checks['contact_associations']='partial_reference_only_no_missing_association_inference'
         checks['known_associations_in_file']=len(linked)
-    summary={'contacts_checked':len(contacts),'deals_checked':len(deals),'issues_total':len(issues),'by_severity':dict(Counter(i['severity'] for i in issues)),'by_rule':dict(sorted(Counter(i['rule_id'] for i in issues).items())),'coverage':checks,'run_time_utc':run_time or datetime.now(timezone.utc).isoformat()}
+    summary={'evaluated_checks':list(BASE_CHECKS + (ASSOCIATION_CHECKS if associations_path else ())), 'contacts_checked':len(contacts),'deals_checked':len(deals),'issues_total':len(issues),'by_severity':dict(Counter(i['severity'] for i in issues)),'by_rule':dict(sorted(Counter(i['rule_id'] for i in issues).items())),'coverage':checks,'run_time_utc':run_time or datetime.now(timezone.utc).isoformat()}
     return summary, issues
 
 def write_results(summary,issues,output):
@@ -77,6 +77,8 @@ def write_results(summary,issues,output):
     lines=['# S02 CRM Data Quality Audit','',f"Contacts checked: **{summary['contacts_checked']}**; deals checked: **{summary['deals_checked']}**; findings: **{summary['issues_total']}**.",'','## Findings by rule','']
     for rule,count in summary['by_rule'].items():lines.append(f'- {rule}: {count}')
     if not summary['by_rule']:lines.append('- No rule violations detected in evaluated checks.')
+    lines+=['','## Checks evaluated','']
+    for rule in summary['evaluated_checks']:lines.append(f'- {rule}')
     lines+=['','## Checks not fully evaluated','']
     for k,v in summary['coverage'].items():lines.append(f'- {k}: {v}')
     lines+=['','## Interpretation','','Findings reflect provisional pilot rules, not universal HubSpot requirements. Missing owners may be intentional. No external AI was used. Source records were not modified.','', '## Recommended review','','Confirm owner-assignment policy; obtain a complete deal-contact association export before enforcing missing-association rules; reconcile close dates against source imports only with a documented transformation policy.']
