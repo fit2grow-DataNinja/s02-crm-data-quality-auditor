@@ -9,13 +9,13 @@ This checklist applies to **each meaningful S02 feature, fix, or integration mil
 ### Variant 1 portfolio MVP acceptance — evidence review (2026-11-06)
 - [x] Existing and newly added core business-rule tests pass, including invalid association references and representative duplicate/owner cases where implemented. **Evidence:** user-reported nine-test suite in [validation](validation.md).
 - [x] Required-file, invalid-schema and relevant failure paths are verified; no unsupported inference from partial association exports. **Evidence:** regression suite and source review; not exhaustive input fuzzing.
-- [ ] Audit output clearly states evaluated checks and unavailable freshness/close-date checks. **Partially met:** coverage limitations are explicit, but the report lists rules with findings rather than every rule evaluated. See [validation](validation.md).
+- [x] Audit output clearly states evaluated checks and unavailable freshness/close-date checks. **Evidence:** `summary.json` includes `evaluated_checks`, `report.md` lists evaluated checks, and two targeted regression tests passed in the user-reported 11-test suite. See [validation](validation.md).
 - [x] One complete synthetic Open WebUI demonstration is recorded with deterministic findings and AI explanation kept separate. **Evidence:** user-reported three-file run; no independent network trace or model-faithfulness evaluation.
 - [x] Synthetic-only security boundary and unimplemented SEC-001 are prominent.
 - [x] A portfolio [Variant 1 case study](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/case-studies/S02-crm-data-quality-auditor.md) explains the problem, architecture, results, tests, trade-offs and limitations.
 - [x] Evidence, test commands and outstanding issues are recorded before declaring the portfolio MVP complete.
 
-**Documentation status:** finalized for Variant 1. **Technical acceptance:** not fully closed while the evaluated-check listing criterion remains open. Checked items reflect documented/user-reported evidence, not a new independent test run. Neither status confers customer-data or production clearance.
+**Variant 1 portfolio MVP acceptance: complete (7/7 criteria), 2026-11-06.** Documentation is finalized. Checked items reflect documented/user-reported local test and demonstration evidence, not an independently reproduced clean-environment run. Neither status confers customer-data or production clearance.
 
 ### Production readiness (separate, deferred gate)
 Customer-data processing requires implemented and tested SEC-001 sensitivity classification, manual approval and fail-closed controls, plus appropriate operational security, deployment reliability, monitoring, performance, comprehensive business-rule/source-data validation and acceptance evidence. **Do not treat portfolio MVP acceptance as production clearance.** The detailed, intentionally deferred work inventory and its evidence expectations are maintained in the [commercial readiness backlog](commercial-readiness-backlog.md); this checklist remains the authority for MVP acceptance.
