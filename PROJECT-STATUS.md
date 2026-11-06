@@ -32,6 +32,7 @@
 - Completed source-based report coverage review and Variant 1 documentation sign-off. `report.md` discloses unavailable checks but does not list all evaluated rules; the corresponding technical acceptance checkbox remains open. No new code or test run was performed.
 - Added deterministic `evaluated_checks` reporting and two targeted tests (commits `dc017c5`, `ab9617e`). Local full-suite verification is pending; the previous nine-test result predates this change.
 - First 11-test run exposed missing `BASE_CHECKS` constant definitions; corrected in commit `bf13405`. User reported the subsequent full suite `Ran 11 tests ... OK` on 2026-11-06. All seven Variant 1 portfolio MVP acceptance criteria are now satisfied; no independent CI or fresh-environment verification.
+- User accepted the final new-chat Open WebUI demonstration on 2026-11-06: GPT-4.1-mini displayed 13 evaluated checks, 0 findings for 1 contact/1 deal/1 association, and explicit coverage limitations. Evidence recorded in `docs/validation.md`; Variant 1 is finalized, with no additional changes requested.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
