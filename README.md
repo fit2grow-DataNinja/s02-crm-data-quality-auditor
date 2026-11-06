@@ -7,7 +7,7 @@ AI-assisted CRM data quality and freshness auditing using deterministic Python/F
 ## Navigation
 - [Service specification](docs/service-specification.md)
 - [Architecture and integration boundaries](docs/architecture.md)
-- [Open WebUI adapter and setup](docs/integration.md)
+- [Run the audit in Open WebUI (reviewer walkthrough)](docs/integration.md)
 - [Local deployment](docs/deployment.md)
 - [Validation evidence](docs/validation.md)
 - [Security and SEC-001 limitations](docs/security.md)
