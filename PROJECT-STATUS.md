@@ -1,14 +1,14 @@
 # Project status — S02 CRM Data Quality & Freshness Auditor
 
 **Last updated:** 2026-11-06  
-**Phase:** Variant 1 documentation finalized; technical acceptance has one open reporting criterion. Variant 2 ChatGPT Skill comparison planned.  
+**Phase:** Variant 1 portfolio MVP accepted (synthetic data only); Variant 2 ChatGPT Skill comparison planned.  
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Core synthetic audit rules and three-file integration have regression evidence**; the latest user-reported full suite passed 9 tests. Variant 1 documentation is finalized. Technical MVP acceptance remains open for the complete evaluated-check listing; production readiness is a separate deferred gate.
+**Core synthetic audit rules and three-file integration have regression evidence**; the latest user-reported full suite passed 9 tests. Variant 1 documentation and all seven portfolio MVP acceptance criteria are complete based on user-reported local evidence. Production readiness remains a separate deferred gate.
 
 ### Next tiny action
-**Run the full local unittest suite for the evaluated-check reporting change and report the actual result.** If it passes, close the final technical MVP criterion and update the case study/status. No new CRM rules or architectural change.
+**Plan Variant 2 Skill-based implementation and shared synthetic comparison criteria.** Preserve Variant 1 as the accepted baseline; no production-data use.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -31,6 +31,7 @@
 - Added a reviewer-oriented Open WebUI walkthrough in `docs/integration.md`, including a sample chat request, tool-result verification, optional association support and troubleshooting; documentation only, no new test execution.
 - Completed source-based report coverage review and Variant 1 documentation sign-off. `report.md` discloses unavailable checks but does not list all evaluated rules; the corresponding technical acceptance checkbox remains open. No new code or test run was performed.
 - Added deterministic `evaluated_checks` reporting and two targeted tests (commits `dc017c5`, `ab9617e`). Local full-suite verification is pending; the previous nine-test result predates this change.
+- First 11-test run exposed missing `BASE_CHECKS` constant definitions; corrected in commit `bf13405`. User reported the subsequent full suite `Ran 11 tests ... OK` on 2026-11-06. All seven Variant 1 portfolio MVP acceptance criteria are now satisfied; no independent CI or fresh-environment verification.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
