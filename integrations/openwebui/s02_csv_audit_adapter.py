@@ -12,20 +12,23 @@ from pathlib import Path
 
 class Tools:
     def run_s02_csv_audit(self, __files__: list = None) -> str:
-        """Audit attached contacts.csv and deals.csv files using deterministic S02 rules."""
+        """Audit contacts.csv, deals.csv, and optional associations.csv using deterministic S02 rules."""
         selected = {}
         for item in (__files__ or []):
             name = (item.get("name") or "").lower()
             metadata = item.get("file") or {}
             path_value = metadata.get("path")
-            if name in ("contacts.csv", "deals.csv") and path_value:
+            if name in ("contacts.csv", "deals.csv", "associations.csv") and path_value:
                 selected[name] = Path(path_value)
         missing = [name for name in ("contacts.csv", "deals.csv") if name not in selected]
         if missing:
             return json.dumps({"status": "error", "message": "Missing required CSV attachments", "missing": missing})
         boundary = uuid.uuid4().hex
         body = bytearray()
-        for field, filename in (("contacts", "contacts.csv"), ("deals", "deals.csv")):
+        uploads = [("contacts", "contacts.csv"), ("deals", "deals.csv")]
+        if "associations.csv" in selected:
+            uploads.append(("associations", "associations.csv"))
+        for field, filename in uploads:
             path = selected[filename]
             if not path.is_file():
                 return json.dumps({"status": "error", "message": f"File not found: {filename}"})
