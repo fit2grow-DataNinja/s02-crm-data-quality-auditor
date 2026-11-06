@@ -8,7 +8,7 @@
 **Optional association CSV forwarding milestone complete**: automated regression and a live synthetic three-file Open WebUI audit are verified. The portfolio MVP acceptance checklist is now separated from production-readiness requirements in `docs/definition-of-done.md`.
 
 ### Next tiny action
-**Run the current full regression suite after pulling the newly committed API negative-association test** (`tests/test_api.py`, commit `31782c5`); record the actual result before marking it passed. Continue one small verifiable action at a time.
+**Add one focused missing-deal-owner regression test** using synthetic data, then run the full suite and record the actual result. Keep the portfolio MVP scope compact.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -22,8 +22,9 @@
 - On 2026-11-06, the focused adapter suite passed (2/2), and the full `python -m unittest discover -s tests -v` suite passed (6 tests in 0.065s) in the project's `.venv`.
 - `requirements-test.txt` already declares `httpx2`; it was missing from the active environment until installed. Dependency declaration is not a guarantee that existing environments are provisioned; reproducible fresh-environment/CI verification remains pending.
 - Live Open WebUI Workspace Tool audit with three synthetic files reported 1 contact, 1 deal, 1 known association, 0 findings, and partial-reference-only association coverage (user-provided response, 2026-11-06). The tool response did not separately expose raw multipart/ZIP evidence, so this is a successful end-to-end reported result, not an independent wire-level capture.
-- Added an API-level negative-association regression test in commit `31782c5`; its execution is still pending user confirmation.
+- Added an API-level negative-association regression test in commit `31782c5`; the user reported the full 7-test suite passed on 2026-11-06 (recorded in `docs/validation.md`).
 - Scope decision: complete a compact, synthetic-data-only Variant 1 portfolio MVP, then compare with a ChatGPT Skill-based Variant 2 using shared synthetic inputs and acceptance criteria. Full production/commercial backlog is explicitly deferred; see `docs/definition-of-done.md`.
+- Documented deliberately deferred commercial/production requirements in `docs/commercial-readiness-backlog.md`, separate from the synthetic-only MVP acceptance gate.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -59,6 +60,7 @@
 - [Integration](docs/integration.md)
 - [Validation](docs/validation.md)
 - [Definition of done](docs/definition-of-done.md)
+- [Commercial readiness backlog](docs/commercial-readiness-backlog.md)
 - [Security](docs/security.md)
 - [Deployment](docs/deployment.md)
 - [Decisions](docs/decisions.md)
