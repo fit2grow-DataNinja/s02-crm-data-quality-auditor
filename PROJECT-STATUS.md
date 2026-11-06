@@ -8,7 +8,7 @@
 **Core synthetic audit rules and three-file integration have regression evidence**; the latest user-reported full suite passed 9 tests. Variant 1 documentation is finalized. Technical MVP acceptance remains open for the complete evaluated-check listing; production readiness is a separate deferred gate.
 
 ### Next tiny action
-**If closing the remaining technical MVP criterion, add and verify an explicit list of evaluated rules in report output.** This is a targeted reporting improvement, not a new CRM rule. Otherwise proceed to Variant 2 planning with the limitation documented.
+**Run the full local unittest suite for the evaluated-check reporting change and report the actual result.** If it passes, close the final technical MVP criterion and update the case study/status. No new CRM rules or architectural change.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -30,6 +30,7 @@
 - Missing-required-deals adapter regression committed as `2f163e6`; user reported `Ran 9 tests ... OK` on 2026-11-06. The adapter rejects the missing required file before any HTTP upload.
 - Added a reviewer-oriented Open WebUI walkthrough in `docs/integration.md`, including a sample chat request, tool-result verification, optional association support and troubleshooting; documentation only, no new test execution.
 - Completed source-based report coverage review and Variant 1 documentation sign-off. `report.md` discloses unavailable checks but does not list all evaluated rules; the corresponding technical acceptance checkbox remains open. No new code or test run was performed.
+- Added deterministic `evaluated_checks` reporting and two targeted tests (commits `dc017c5`, `ab9617e`). Local full-suite verification is pending; the previous nine-test result predates this change.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
