@@ -8,7 +8,7 @@
 **Core synthetic audit rules and three-file integration have regression evidence**; the latest full suite passed 8 tests. The portfolio MVP remains in final acceptance review, separate from production readiness.
 
 ### Next tiny action
-**Review the Portfolio MVP acceptance checklist** against existing evidence and identify the smallest outstanding verification gap; avoid expanding the commercial backlog into the MVP.
+**Verify the Open WebUI adapter's missing-required-file error path** with one focused synthetic regression test or existing test evidence, then review report coverage and finalize the Variant 1 case study. Do not add new CRM rules merely to expand scope.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -26,6 +26,7 @@
 - Scope decision: complete a compact, synthetic-data-only Variant 1 portfolio MVP, then compare with a ChatGPT Skill-based Variant 2 using shared synthetic inputs and acceptance criteria. Full production/commercial backlog is explicitly deferred; see `docs/definition-of-done.md`.
 - Documented deliberately deferred commercial/production requirements in `docs/commercial-readiness-backlog.md`, separate from the synthetic-only MVP acceptance gate.
 - Added focused missing-deal-owner regression test in commit `db6519c`; user reported `Ran 8 tests ... OK` on 2026-11-06. The run is recorded in `docs/validation.md`.
+- Reviewed the seven Variant 1 MVP acceptance criteria: core regression and integration evidence are present; adapter missing-required-file evidence, final report review, and case-study/evidence sign-off remain to close. Corrected stale deployment and service-specification statements. No production-readiness claim.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
