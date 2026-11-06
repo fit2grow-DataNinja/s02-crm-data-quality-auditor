@@ -9,6 +9,19 @@ STAGES = ['Lead Identified','Qualified','Needs Analysis','Proposal Sent','Negoti
 LATE_STAGES = {'Proposal Sent','Negotiation','Closed Won','Closed Lost'}
 EMAIL = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
 
+
+# Rule IDs evaluated by the existing deterministic audit logic.
+BASE_CHECKS = (
+    'CRM-RECORD-ID-MISSING', 'CRM-RECORD-ID-DUPLICATE',
+    'CRM-EMAIL-MISSING', 'CRM-EMAIL-INVALID', 'CRM-EMAIL-DUPLICATE',
+    'CRM-DEAL-NAME-MISSING', 'CRM-DEAL-NAME-DUPLICATE',
+    'CRM-STAGE-UNKNOWN', 'CRM-NEGOTIATION-AMOUNT-MISSING',
+    'CRM-AMOUNT-INVALID', 'CRM-DEAL-OWNER-MISSING',
+)
+ASSOCIATION_CHECKS = (
+    'CRM-ASSOCIATION-DEAL-UNKNOWN', 'CRM-ASSOCIATION-CONTACT-UNKNOWN',
+)
+
 def load_csv(path):
     with open(path, newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
