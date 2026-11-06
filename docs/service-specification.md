@@ -6,7 +6,7 @@ Status: **Working synthetic-data MVP; commercial and production validation pendi
 Audit exported CRM contact and deal records using deterministic data-quality rules; use AI to explain results, not calculate findings.
 
 ## Inputs and outputs
-Required: `contacts.csv`, `deals.csv`. The FastAPI `/audit` endpoint also supports optional `associations` input; the current Open WebUI adapter sends only contacts and deals. Output: ZIP containing `summary.json`, `issues.csv`, `report.md`. The chat adapter reads summary and Markdown report and returns text, not a downloadable ZIP.
+Required: `contacts.csv`, `deals.csv`. The FastAPI `/audit` endpoint also supports optional `associations` input; the Open WebUI Workspace Tool adapter forwards optional associations when supplied. Output: ZIP containing `summary.json`, `issues.csv`, `report.md`. The chat adapter reads summary and Markdown report and returns text, not a downloadable ZIP.
 
 ## Verified milestone
 Synthetic sample: 202 contacts, 121 deals, 92 medium-severity missing-deal-owner findings (`CRM-DEAL-OWNER-MISSING`). Other checks remain limited by missing exports and incomplete freshness/reconciliation data. Business owner-assignment policy is provisional.
