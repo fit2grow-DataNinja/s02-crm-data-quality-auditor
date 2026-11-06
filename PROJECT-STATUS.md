@@ -5,10 +5,10 @@
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Extend optional deal–contact association support in the Open WebUI Workspace Tool adapter**, preserving the verified two-file contacts/deals workflow and the existing deterministic audit rules.
+**Optional association CSV forwarding is implemented and regression-verified** in the Open WebUI Workspace Tool adapter. The broader service remains in active development.
 
 ### Next tiny action
-**Run the focused adapter tests to confirm the new three-file association test fails for the expected missing multipart field**, while the two-file regression still passes. Do not modify the adapter until that test-first checkpoint is verified.
+**Verify the updated Open WebUI Workspace Tool in a live synthetic three-file upload** (contacts, deals, optional associations) and inspect the returned ZIP/report. The automated adapter tests mock HTTP and do not replace a live integration check.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -18,7 +18,9 @@
 - Verified synthetic result: **202 contacts**, **121 deals**, **92 medium findings**, all `CRM-DEAL-OWNER-MISSING`.
 - The two-file Open WebUI adapter regression test passed locally (1 test, 2026-11-05); committed as `ff570a2`.
 - Added `tests/fixtures/README.md` for reusable synthetic fixture policy and `docs/definition-of-done.md` for permanent milestone acceptance criteria.
-- Added a test-first regression case for optional `associations.csv` forwarding (commit `8b11327`); execution is pending and failure is expected until the adapter is extended.
+- Test-first cycle verified: new three-file adapter test failed for the missing multipart field while two-file regression passed; adapter fixed in commit `468b04e`.
+- On 2026-11-06, the focused adapter suite passed (2/2), and the full `python -m unittest discover -s tests -v` suite passed (6 tests in 0.065s) in the project's `.venv`.
+- `requirements-test.txt` already declares `httpx2`; it was missing from the active environment until installed. Dependency declaration is not a guarantee that existing environments are provisioned; reproducible fresh-environment/CI verification remains pending.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -28,14 +30,14 @@
 | FastAPI source, dependencies, tests and synthetic fixtures | Complete | Commit `2d64691` |
 | Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
 | Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
-| Optional association input in conversational adapter | **Current** | Three-file regression committed; verify expected failure, then implement forwarding |
+| Optional association input in conversational adapter | **Code and automated regression verified** | 2 adapter tests and 6 total tests passed; live three-file Open WebUI check pending |
 | Full association and freshness audit coverage | Pending | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
 | Portable deployment and operational checks | Pending | Documented reproducible Podman validation |
 | Customer/commercial validation | Pending | Separate from technical acceptance |
 
 ## Known limitations and boundaries
-- The FastAPI endpoint accepts optional `associations` input and validates references present in the file; the Open WebUI adapter currently forwards only contacts and deals. A partial association reference file cannot establish which deals have no associations.
+- The FastAPI endpoint accepts optional `associations` input and validates references present in the file; the Open WebUI adapter now forwards optional associations; a live three-file Workspace Tool verification remains pending. A partial association reference file cannot establish which deals have no associations.
 - Original close-date values and extract timestamps are unavailable for full reconciliation and freshness evaluation.
 - Direct OpenAPI External Tool Server `/audit` upload previously failed HTTP 422 due to missing multipart attachments. **Do not confuse this with the verified Open WebUI Auditor Adapter.**
 - Deterministic Python/SQL rules own findings; hosted AI may explain results, not invent them.
