@@ -1,14 +1,14 @@
 # Project status — S02 CRM Data Quality & Freshness Auditor
 
 **Last updated:** 2026-11-06  
-**Phase:** Variant 1 portfolio MVP completion (synthetic-data-only); Variant 2 ChatGPT Skill comparison planned.  
+**Phase:** Variant 1 documentation finalized; technical acceptance has one open reporting criterion. Variant 2 ChatGPT Skill comparison planned.  
 **Status:** Active; **not production-ready**.
 
 ## Current working step
-**Core synthetic audit rules and three-file integration have regression evidence**; the latest user-reported full suite passed 9 tests. The portfolio MVP remains in final acceptance review, separate from production readiness.
+**Core synthetic audit rules and three-file integration have regression evidence**; the latest user-reported full suite passed 9 tests. Variant 1 documentation is finalized. Technical MVP acceptance remains open for the complete evaluated-check listing; production readiness is a separate deferred gate.
 
 ### Next tiny action
-**Review final audit report coverage and limitation wording** against actual output generation, then finalize the Variant 1 case study and acceptance evidence. Do not expand CRM rules merely to increase scope.
+**If closing the remaining technical MVP criterion, add and verify an explicit list of evaluated rules in report output.** This is a targeted reporting improvement, not a new CRM rule. Otherwise proceed to Variant 2 planning with the limitation documented.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -29,6 +29,7 @@
 - Reviewed the seven Variant 1 MVP acceptance criteria: core regression and integration evidence are present; adapter missing-required-file evidence, final report review, and case-study/evidence sign-off remain to close. Corrected stale deployment and service-specification statements. No production-readiness claim.
 - Missing-required-deals adapter regression committed as `2f163e6`; user reported `Ran 9 tests ... OK` on 2026-11-06. The adapter rejects the missing required file before any HTTP upload.
 - Added a reviewer-oriented Open WebUI walkthrough in `docs/integration.md`, including a sample chat request, tool-result verification, optional association support and troubleshooting; documentation only, no new test execution.
+- Completed source-based report coverage review and Variant 1 documentation sign-off. `report.md` discloses unavailable checks but does not list all evaluated rules; the corresponding technical acceptance checkbox remains open. No new code or test run was performed.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
