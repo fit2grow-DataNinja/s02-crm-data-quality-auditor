@@ -1,6 +1,6 @@
 import csv,tempfile,unittest
 from pathlib import Path
-from s02.audit import audit
+from s02.audit import audit, write_results
 
 def make(p,rows):
     with p.open('w',newline='') as f:
@@ -36,6 +36,40 @@ class AuditTests(unittest.TestCase):
             self.assertEqual(owner_issues[0]['record_id'], '2')
             self.assertEqual(owner_issues[0]['severity'], 'medium')
             self.assertEqual(summary['by_rule']['CRM-DEAL-OWNER-MISSING'], 1)
+
+    def test_report_lists_evaluated_checks_without_associations(self):
+        with tempfile.TemporaryDirectory() as t:
+            base = Path(t)
+            c = base / 'contacts.csv'; d = base / 'deals.csv'
+            make(c, [{'Record ID': '1', 'Email': 'synthetic@example.com'}])
+            make(d, [{'Record ID': '2', 'Deal Name': 'Example', 'Deal Stage': 'Qualified', 'Amount': '100', 'Deal owner': 'Owner'}])
+            summary, issues = audit(c, d)
+            write_results(summary, issues, base / 'output')
+            report = (base / 'output' / 'report.md').read_text()
+            evaluated = report.split('## Checks evaluated')[1].split('## Checks not fully evaluated')[0]
+            self.assertEqual(summary['issues_total'], 0)
+            self.assertIn('CRM-EMAIL-DUPLICATE', evaluated)
+            self.assertIn('CRM-DEAL-OWNER-MISSING', evaluated)
+            self.assertNotIn('CRM-ASSOCIATION-DEAL-UNKNOWN', evaluated)
+            self.assertIn('not_evaluated_no_association_export', report)
+            self.assertIn('not_evaluated_no_extract_timestamp', report)
+
+    def test_report_lists_association_reference_checks_only_when_supplied(self):
+        with tempfile.TemporaryDirectory() as t:
+            base = Path(t)
+            c = base / 'contacts.csv'; d = base / 'deals.csv'; a = base / 'associations.csv'
+            make(c, [{'Record ID': '1', 'Email': 'synthetic@example.com'}])
+            make(d, [{'Record ID': '2', 'Deal Name': 'Example', 'Deal Stage': 'Qualified', 'Amount': '100', 'Deal owner': 'Owner'}])
+            make(a, [{'Deal Record ID': '2', 'Contact Record ID': '1'}])
+            summary, issues = audit(c, d, a)
+            write_results(summary, issues, base / 'output')
+            report = (base / 'output' / 'report.md').read_text()
+            evaluated = report.split('## Checks evaluated')[1].split('## Checks not fully evaluated')[0]
+            self.assertEqual(summary['issues_total'], 0)
+            self.assertIn('CRM-ASSOCIATION-DEAL-UNKNOWN', evaluated)
+            self.assertIn('CRM-ASSOCIATION-CONTACT-UNKNOWN', evaluated)
+            self.assertIn('partial_reference_only_no_missing_association_inference', report)
+            self.assertNotIn('CRM-ASSOCIATION-MISSING', evaluated)
 
     def test_schema_rejection(self):
         with tempfile.TemporaryDirectory() as t:
