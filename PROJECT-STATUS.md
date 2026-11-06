@@ -1,6 +1,6 @@
 # Project status — S02 CRM Data Quality & Freshness Auditor
 
-**Last updated:** 2026-11-05  
+**Last updated:** 2026-11-06  
 **Phase:** Verified synthetic-data MVP; incremental audit-coverage development.  
 **Status:** Active; **not production-ready**.
 
@@ -8,7 +8,7 @@
 **Extend optional deal–contact association support in the Open WebUI Workspace Tool adapter**, preserving the verified two-file contacts/deals workflow and the existing deterministic audit rules.
 
 ### Next tiny action
-**Add a failing regression test for the optional three-file association upload**, while retaining the verified two-file regression test. Use synthetic data only.
+**Run the focused adapter tests to confirm the new three-file association test fails for the expected missing multipart field**, while the two-file regression still passes. Do not modify the adapter until that test-first checkpoint is verified.
 
 ### Last completed
 - S02 FastAPI application, deterministic audit rules, CLI, dependency manifests, tests and synthetic CSV samples are source-controlled on `main` (commit `2d64691`).
@@ -18,6 +18,7 @@
 - Verified synthetic result: **202 contacts**, **121 deals**, **92 medium findings**, all `CRM-DEAL-OWNER-MISSING`.
 - The two-file Open WebUI adapter regression test passed locally (1 test, 2026-11-05); committed as `ff570a2`.
 - Added `tests/fixtures/README.md` for reusable synthetic fixture policy and `docs/definition-of-done.md` for permanent milestone acceptance criteria.
+- Added a test-first regression case for optional `associations.csv` forwarding (commit `8b11327`); execution is pending and failure is expected until the adapter is extended.
 - Approved architecture and audit rules remain unchanged.
 
 ## Implementation checkpoints
@@ -27,7 +28,7 @@
 | FastAPI source, dependencies, tests and synthetic fixtures | Complete | Commit `2d64691` |
 | Local standalone API and audit verification | Complete | 2026-11-05 health, multipart upload and ZIP checks |
 | Open WebUI Workspace Tool conversational audit | Complete for two required CSVs | 2026-11-05 synthetic adapter verification |
-| Optional association input in conversational adapter | **Current** | Two-file regression passed; add three-file test, then optional upload |
+| Optional association input in conversational adapter | **Current** | Three-file regression committed; verify expected failure, then implement forwarding |
 | Full association and freshness audit coverage | Pending | Complete source exports, timestamps and agreed rule criteria |
 | SEC-001 sensitivity/manual approval enforcement | **Not implemented** | Design, approval, negative tests and fail-closed verification |
 | Portable deployment and operational checks | Pending | Documented reproducible Podman validation |
