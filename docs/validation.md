@@ -9,7 +9,7 @@ Status: Verified synthetic-data integration milestones; evidence from reported l
 | Workspace Tool multipart upload | Passed | FastAPI HTTP 200 and ZIP response |
 | Conversational audit explanation | Passed | Model described deterministic findings |
 | Optional associations adapter regression | Passed | 2026-11-06: two-file and three-file mock HTTP tests passed (2/2); prior three-file test failed before implementation as expected |
-| Full Python unittest suite | Passed | 2026-11-06: `python -m unittest discover -s tests -v` — 7 tests, OK (latest user-reported local run; prior six-test run took 0.065s) |
+| Full Python unittest suite | Passed | 2026-11-06: `python -m unittest discover -s tests -v` — 8 tests, OK (latest user-reported local run; earlier runs also passed) |
 | Live Open WebUI three-file upload | Passed (user-reported) | 2026-11-06: synthetic upload reported 1 contact, 1 deal, 1 known association, 0 findings, partial-reference-only coverage; no independent network trace |
 | Direct OpenAPI `/audit` upload | Failed | HTTP 422 missing multipart files |
 | SEC-001 enforcement | Not implemented | No customer-data clearance |
@@ -18,4 +18,4 @@ Observed synthetic results: **202 contacts**, **121 deals**, **92 medium finding
 
 Test dependency note: `requirements-test.txt` already lists `httpx2`. The local environment lacked it during an earlier full-suite run; the user reinstalled it and then all six tests passed. Fresh-environment dependency installation and CI remain to be verified.
 
-Next: review remaining portfolio-MVP core business-rule coverage and select the smallest missing acceptance test; CI/container hardening remains deferred.
+Next: review the portfolio-MVP acceptance checklist and select the smallest remaining verification gap; CI/container hardening remains deferred.
