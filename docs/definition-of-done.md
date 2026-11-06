@@ -2,6 +2,28 @@
 
 This checklist applies to **each meaningful S02 feature, fix, or integration milestone**. It is a completion gate, not a claim that the overall service is production-ready.
 
+## Delivery levels: portfolio MVP versus production readiness
+
+**Current target: Variant 1 portfolio MVP, synthetic data only.** Its purpose is to demonstrate sound solution design, deterministic CRM audit logic, FastAPI integration, Open WebUI AI-assisted explanation, regression testing, honest limitations, and a reproducible demonstration. It is **not** a customer deployment or production-readiness claim.
+
+### Variant 1 portfolio MVP acceptance
+- [ ] Existing and newly added core business-rule tests pass, including invalid association references and representative duplicate/owner cases where implemented.
+- [ ] Required-file, invalid-schema and relevant failure paths are verified; no unsupported inference from partial association exports.
+- [ ] Audit output clearly states evaluated checks and unavailable freshness/close-date checks.
+- [ ] One complete synthetic Open WebUI demonstration is recorded with deterministic findings and AI explanation kept separate.
+- [ ] Synthetic-only security boundary and unimplemented SEC-001 are prominent.
+- [ ] A portfolio case study explains the problem, architecture, results, tests, trade-offs and limitations.
+- [ ] Evidence, test commands and outstanding issues are recorded before declaring the portfolio MVP complete.
+
+### Production readiness (separate, deferred gate)
+Customer-data processing requires implemented and tested SEC-001 sensitivity classification, manual approval and fail-closed controls, plus appropriate operational security, deployment reliability, monitoring, performance, comprehensive business-rule/source-data validation and acceptance evidence. **Do not treat portfolio MVP acceptance as production clearance.**
+
+### Variant 2: ChatGPT Skill comparison (after Variant 1)
+Develop a reusable skill-based workflow for the same synthetic CRM audit scenario and compare both variants using shared datasets and criteria: finding accuracy, repeatability, explainability, setup/maintenance effort and security boundaries. Prefer executable deterministic checks where the skill environment supports them; do not claim instructions alone guarantee deterministic results.
+
+### Deferred from Variant 1 MVP
+Comprehensive freshness and close-date reconciliation, extensive stage-specific business rules, GitHub CI, load testing, hardened production deployment, commercial pilot preparation and premature shared-core extraction are optional later backlog items, not portfolio MVP blockers.
+
 ## Required for every change
 - [ ] Scope and expected behavior are clear, including what is explicitly out of scope.
 - [ ] The change follows the approved architecture: deterministic audit findings remain in Python/FastAPI; AI explains results only.
