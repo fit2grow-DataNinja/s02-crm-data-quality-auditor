@@ -123,5 +123,25 @@ class AdapterTests(unittest.TestCase):
             self.assertIn(associations.read_bytes(), request.data)
 
 
+    def test_missing_required_deals_attachment_returns_error_without_http_call(self):
+        """An optional association must not substitute for required deals.csv."""
+        with patch(
+            "integrations.openwebui.s02_csv_audit_adapter.urllib.request.urlopen"
+        ) as mock_open:
+            result = json.loads(
+                Tools().run_s02_csv_audit(
+                    __files__=[
+                        {"name": "contacts.csv", "file": {"path": "/synthetic/contacts.csv"}},
+                        {"name": "associations.csv", "file": {"path": "/synthetic/associations.csv"}},
+                    ]
+                )
+            )
+
+        self.assertEqual(result["status"], "error")
+        self.assertEqual(result["message"], "Missing required CSV attachments")
+        self.assertEqual(result["missing"], ["deals.csv"])
+        mock_open.assert_not_called()
+
+
 if __name__ == "__main__":
     unittest.main()
