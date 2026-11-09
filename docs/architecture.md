@@ -2,7 +2,7 @@
 
 Status: Observed MVP integration; not a replacement for portfolio architecture v0.1.
 
-The approved platform baseline and architecture change policy live in the [portfolio repository](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/architecture/baseline-v0.1.md).
+The approved platform baseline and architecture change policy live in the [portfolio repository](https://github.com/fit2grow-DataNinja/ai-services-portfolio/blob/main/architecture/baseline-v0.1.md).
 
 ## Verified paths
 1. Standalone: local FastAPI `POST /audit` accepts multipart CRM CSV exports, invokes deterministic checks, and returns a ZIP report.
