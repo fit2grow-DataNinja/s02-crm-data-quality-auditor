@@ -12,7 +12,7 @@ This checklist applies to **each meaningful S02 feature, fix, or integration mil
 - [x] Audit output clearly states evaluated checks and unavailable freshness/close-date checks. **Evidence:** `summary.json` includes `evaluated_checks`, `report.md` lists evaluated checks, and two targeted regression tests passed in the user-reported 11-test suite. See [validation](validation.md).
 - [x] One complete synthetic Open WebUI demonstration is recorded with deterministic findings and AI explanation kept separate. **Evidence:** user-reported three-file run; no independent network trace or model-faithfulness evaluation.
 - [x] Synthetic-only security boundary and unimplemented SEC-001 are prominent.
-- [x] A portfolio [Variant 1 case study](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/case-studies/S02-crm-data-quality-auditor.md) explains the problem, architecture, results, tests, trade-offs and limitations.
+- [x] A portfolio [Variant 1 case study](https://github.com/fit2grow-DataNinja/ai-services-portfolio/blob/main/case-studies/S02-crm-data-quality-auditor.md) explains the problem, architecture, results, tests, trade-offs and limitations.
 - [x] Evidence, test commands and outstanding issues are recorded before declaring the portfolio MVP complete.
 
 **Variant 1 portfolio MVP acceptance: complete (7/7 criteria), 2026-11-06.** Documentation is finalized. Checked items reflect documented/user-reported local test and demonstration evidence, not an independently reproduced clean-environment run. Neither status confers customer-data or production clearance.
