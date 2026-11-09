@@ -1,6 +1,6 @@
 # S02 implementation decisions and open items
 
-The authoritative cross-service decision log is in the [portfolio repository](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/decisions/decision-log.md). This document records implementation-specific choices without overriding it.
+The authoritative cross-service decision log is in the [portfolio repository](https://github.com/fit2grow-DataNinja/ai-services-portfolio/blob/main/decisions/decision-log.md). This document records implementation-specific choices without overriding it.
 
 - Verified: standalone FastAPI and Open WebUI Workspace Tool paths are both MVP acceptance scenarios.
 - Verified: Workspace Tool adapter bridges chat attachments to FastAPI multipart upload; direct OpenAPI upload failed HTTP 422.
@@ -17,4 +17,4 @@ The authoritative cross-service decision log is in the [portfolio repository](ht
 
 **Consequences and trade-offs:** The MVP cannot process real customer CRM data or claim production readiness. Deferred security, privacy, operational, data-source completeness, and commercial requirements remain visible in the [commercial readiness backlog](commercial-readiness-backlog.md), not forgotten or implicitly waived. The [definition of done](definition-of-done.md) remains the MVP acceptance gate.
 
-**Portfolio presentation:** A [business-facing S02 case study](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/case-studies/S02-crm-data-quality-auditor.md) is maintained in the portfolio repository, linking back to technical evidence here. Its status remains draft until acceptance evidence is complete.
+**Portfolio presentation:** A [business-facing S02 case study](https://github.com/fit2grow-DataNinja/ai-services-portfolio/blob/main/case-studies/S02-crm-data-quality-auditor.md) is maintained in the portfolio repository, linking back to technical evidence here. Its status remains draft until acceptance evidence is complete.
