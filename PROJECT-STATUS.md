@@ -58,7 +58,7 @@
 - Preserve the approved modular FastAPI/Open WebUI/Podman architecture. Defer `ai-services-core` extraction until actual cross-service reuse is demonstrated.
 
 ## Resume instructions
-1. Read this file and the [portfolio status](https://github.com/bb-DataNinja/ai-services-portfolio/blob/main/PROJECT-STATUS.md).
+1. Read this file and the [portfolio status](https://github.com/fit2grow-DataNinja/ai-services-portfolio/blob/main/PROJECT-STATUS.md).
 2. Continue from **Next tiny action**, one incremental, verifiable change at a time.
 3. Update this service status after meaningful milestones; update portfolio status only for portfolio-level changes.
 
