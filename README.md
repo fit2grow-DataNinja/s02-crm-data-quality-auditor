@@ -4,6 +4,10 @@ A completed **synthetic-data portfolio MVP** demonstrating deterministic CRM dat
 
 This repository contains the Variant 1 implementation. The portfolio-level use case compares it with a separate ChatGPT Skill implementation.
 
+## Relationship to the AI Enablement Method
+
+This project predates development of the AI Enablement Method and has not been assessed under it. This repository remains the authoritative source for its implementation details and project evidence. A future retrospective assessment, if completed, should be separately dated and state the method version used. See the [repository map](https://github.com/fit2grow-DataNinja/ai-enablement-method/blob/main/REPOSITORY-MAP.md).
+
 ## Business problem
 
 CRM data issues can reduce confidence in pipeline reporting and create manual review work. S02 explores how to identify specific, reviewable findings in CRM CSV exports and explain them in business language, while keeping audit decisions in deterministic code.
