@@ -6,7 +6,7 @@ This repository contains the Variant 1 implementation. The portfolio-level use c
 
 ## Relationship to the AI Enablement Method
 
-This project predates the AI Enablement Method and NIST AI RMF working documents. A retrospective NIST AI RMF 1.0 assessment of Variant 1 is now recorded in [docs/nist-ai-rmf-retrospective-assessment.md](docs/nist-ai-rmf-retrospective-assessment.md). It is a portfolio learning draft, not an organizational assessment or proof of effective controls. This is not an assessment under the AI Enablement Method. See the [repository map](https://github.com/fit2grow-DataNinja/ai-enablement-method/blob/main/REPOSITORY-MAP.md).
+This MVP predates the AI Enablement Method and has **not** been assessed under that method. Separate retrospective portfolio assessments apply the EU AI Act and NIST AI RMF to Variant 1 as documented. They are bounded learning artifacts, not an organizational assessment, legal opinion, or proof that controls operate effectively. The [repository map](https://github.com/fit2grow-DataNinja/ai-enablement-method/blob/main/REPOSITORY-MAP.md) explains how this project repository fits into the wider AI-enablement structure.
 
 ## Business problem
 
@@ -44,9 +44,14 @@ The project includes an 11-test regression suite and documented API and Open Web
 
 See [security status](docs/security.md) for the current data-handling boundary.
 
-## Governance assessment
+## Governance assessments
 
-- [Retrospective NIST AI RMF assessment — Variant 1](docs/nist-ai-rmf-retrospective-assessment.md): bounded portfolio assessment, with proposed targets clearly distinguished from company-agreed targets.
+The preliminary EU AI Act screen is complete for the documented synthetic MVP scope. The NIST AI RMF retrospective dispositions all 72 Core subcategories. Both are portfolio-level analyses; neither is an organizational compliance assessment.
+
+- **EU AI Act:** [Business-facing overview and status](docs/eu-ai-act-evaluation-overview-status.md) · [Project-screening record](docs/eu-ai-act-project-screening-record.md) · [Retrospective assessment](docs/eu-ai-act-retrospective-assessment.md)
+- **NIST AI RMF:** [Business-facing overview and status](docs/nist-ai-rmf-evaluation-overview-status.md) · [Project assessment record](docs/nist-ai-rmf-project-assessment-record.md) · [Retrospective assessment](docs/nist-ai-rmf-retrospective-assessment.md)
+
+NIST Target Profile entries are proposed portfolio targets, not company-agreed goals. The detailed NIST retrospective remains a draft for review.
 
 ## Repository navigation
 
