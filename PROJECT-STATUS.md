@@ -1,6 +1,6 @@
 # Project status — S02 Variant 1
 
-**Last updated:** 2026-11-09  
+**Last updated:** 2026-11-24  
 **Stage:** Synthetic-data portfolio MVP complete and accepted.  
 **Status:** Closed for the defined MVP scope; **not production-ready**.
 
@@ -13,6 +13,10 @@ The shared synthetic scenario recorded **202 contacts, 121 deals, and 92 medium-
 ## Validation
 
 The project includes an 11-test regression suite and documented standalone API and Open WebUI demonstration scenarios. The detailed [validation record](docs/validation.md) preserves the commands, outcomes, evidence boundaries, and limitations.
+
+## Retrospective NIST AI RMF assessment
+
+A bounded retrospective assessment of Variant 1 was added at [docs/nist-ai-rmf-retrospective-assessment.md](docs/nist-ai-rmf-retrospective-assessment.md), using the repository-authored NIST AI RMF 1.0 application matrix and record template. It assesses only documented portfolio evidence. Because no company or company representatives were involved, target states are proposed portfolio targets, not organization-approved goals. The assessment does not change the closed MVP scope or authorize real-data/production use.
 
 ## Scope and limitations
 
