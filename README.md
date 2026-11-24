@@ -6,7 +6,7 @@ This repository contains the Variant 1 implementation. The portfolio-level use c
 
 ## Relationship to the AI Enablement Method
 
-This project predates development of the AI Enablement Method and has not been assessed under it. This repository remains the authoritative source for its implementation details and project evidence. A future retrospective assessment, if completed, should be separately dated and state the method version used. See the [repository map](https://github.com/fit2grow-DataNinja/ai-enablement-method/blob/main/REPOSITORY-MAP.md).
+This project predates the AI Enablement Method and NIST AI RMF working documents. A retrospective NIST AI RMF 1.0 assessment of Variant 1 is now recorded in [docs/nist-ai-rmf-retrospective-assessment.md](docs/nist-ai-rmf-retrospective-assessment.md). It is a portfolio learning draft, not an organizational assessment or proof of effective controls. This is not an assessment under the AI Enablement Method. See the [repository map](https://github.com/fit2grow-DataNinja/ai-enablement-method/blob/main/REPOSITORY-MAP.md).
 
 ## Business problem
 
@@ -43,6 +43,10 @@ The project includes an 11-test regression suite and documented API and Open Web
 - This MVP is not production-ready, commercially validated, or evidence of GDPR compliance or tenant isolation.
 
 See [security status](docs/security.md) for the current data-handling boundary.
+
+## Governance assessment
+
+- [Retrospective NIST AI RMF assessment — Variant 1](docs/nist-ai-rmf-retrospective-assessment.md): bounded portfolio assessment, with proposed targets clearly distinguished from company-agreed targets.
 
 ## Repository navigation
 
