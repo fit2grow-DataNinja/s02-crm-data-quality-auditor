@@ -5,12 +5,12 @@
 - **Project/system name:** S02 CRM Data Quality & Freshness Auditor — Variant 1
 - **Repository or project link:** [S02 Variant 1 repository](https://github.com/fit2grow-DataNinja/s02-crm-data-quality-auditor)
 - **Assessment owner:** Portfolio author
-- **Reviewer(s) and expertise/role:** No independent legal reviewer or external auditor recorded. Portfolio-owner review of this completed screening record is pending.
+- **Reviewer(s) and expertise/role:** No independent legal reviewer or external auditor recorded. Portfolio-owner review accepted for the stated preliminary portfolio screen on 24 November 2026.
 - **Assessment date:** 24 November 2026
 - **Review trigger/date:** Initial EU AI Act retrospective screening of the completed synthetic-data portfolio MVP; reassess before changes or broader use.
 - **System/model/version assessed:** Variant 1 integrated demo path: deterministic Python/FastAPI audit service; Open WebUI Workspace Tool adapter; configured hosted generative model. Project materials refer to GPT-4.1-mini in a demonstration but do not establish an exact deployed model version or full runtime configuration.
 - **Intended deployment jurisdiction(s):** EU AI Act used as the screening framework. No deploying organization, actual deployment jurisdiction, or customer-use context is established.
-- **Status:** Draft — completed from the accepted retrospective assessment; project-owner review pending.
+- **Status:** Completed and accepted by the portfolio owner for the documented synthetic MVP scope (24 November 2026); preliminary only.
 - **Legal source snapshot checked (include consolidated text date/version):** Regulation (EU) 2024/1689, EUR-Lex consolidated text dated 27 July 2026, including Regulation (EU) 2026/1744. Recheck the authentic Official Journal acts and EUR-Lex before applying this record to a real deployment.
 - **Guidance source dates/status checked:** European Commission Article 50 transparency guidance published 20 July 2026; high-risk classification guidance status recorded as draft in the framework source record reviewed 23 November 2026; Article 4 and other source records checked 23 November 2026. Recheck current status before reliance.
 - **Related source records:** [SRC-001 — consolidated AI Act text](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-001-eu-ai-act-consolidated-text.md); [SRC-002 — high-risk classification guidance](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-002-high-risk-classification-guidance.md); [SRC-003 — Article 50 guidance](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-003-article-50-transparency-guidance.md); [SRC-008 — Article 4 AI literacy](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-008-ai-act-article-4-ai-literacy.md).
