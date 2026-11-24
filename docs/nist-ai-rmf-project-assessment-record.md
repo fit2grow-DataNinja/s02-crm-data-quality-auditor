@@ -1,7 +1,7 @@
 # NIST AI RMF project assessment record — S02 Variant 1
 
 **Record ID:** S02-NIST-RECORD-V1-2026-11-24  
-**Status:** Completed for the bounded portfolio assessment; draft for owner review  
+**Status:** Completed for the bounded portfolio assessment; accepted by the portfolio owner on 24 November 2026  
 **Assessment date:** 24 November 2026  
 **Record owner:** Portfolio author  
 **Contributors / company representatives:** None; self-directed portfolio project  
@@ -174,15 +174,15 @@ Reassess if any of the following occurs:
 | Relevant business / domain owner | None; self-directed project | No company review. | Not applicable |
 | Technical / data / security reviewer | No independent reviewer recorded | User-reported testing is identified as such; no independent verification is claimed. | Not recorded |
 | Risk / governance reviewer | No independent reviewer recorded | No organizational risk acceptance. | Not recorded |
-| Decision-maker | Portfolio owner | Bounded portfolio decision: synthetic demonstration only. | 24 November 2026 |
+| Record approval | Portfolio owner | Accepted this record for the stated portfolio purpose. | 24 November 2026 |\n| Decision-maker | Portfolio owner | Bounded portfolio decision: synthetic demonstration only. | 24 November 2026 |
 
-Owner review of this record remains pending. Sign-off, if later recorded, means review for the stated purpose; it is not certification or proof of control effectiveness.
+The portfolio owner accepted this record for the stated portfolio purpose on 24 November 2026. Sign-off, if later recorded, means review for the stated purpose; it is not certification or proof of control effectiveness.
 
 ## 11. Change history
 
 | Record version/date | Change | Reason/source | Affected sections | Reviewed by |
 |---|---|---|---|---|
-| 0.1 / 24 November 2026 | Initial S02 Variant 1 project assessment record prepared from the retrospective assessment and available project evidence. | Apply the repository NIST project assessment record template to the completed bounded portfolio assessment. | All | Portfolio-owner review pending |
+| 0.1 / 24 November 2026 | Initial S02 Variant 1 project assessment record prepared from the retrospective assessment and available project evidence. | Apply the repository NIST project assessment record template to the completed bounded portfolio assessment. | All | Accepted by portfolio owner, 24 November 2026 |
 
 ## Use limitation
 
