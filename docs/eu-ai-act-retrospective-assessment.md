@@ -1,7 +1,7 @@
 # EU AI Act retrospective assessment — S02 Variant 1
 
 **Record ID:** S02-EUAI-ACT-RETRO-V1-2026-11-24  
-**Status:** Retrospective portfolio screening; draft for review  
+**Status:** Retrospective portfolio screening; accepted by the portfolio owner for the documented MVP scope  
 **Assessment date:** 24 November 2026  
 **Assessment owner:** Portfolio author  
 **Contributors / company representatives:** None; self-directed portfolio project  
