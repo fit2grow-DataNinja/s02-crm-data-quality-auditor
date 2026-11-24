@@ -18,7 +18,7 @@
 | What is S02 Variant 1? | A synthetic-data portfolio MVP that runs deterministic CRM data-quality checks and uses a hosted generative model to explain the resulting report. |
 | What stage is assessed? | Completed and accepted for the defined synthetic-data demonstration only. It is not production-ready or approved for customer use. |
 | What is the current portfolio decision? | Keep the use within the documented synthetic-data, read-only demonstration boundary. Do not use real or sensitive CRM data or expand to customer or production use on the basis of this assessment. |
-| What is the preliminary EU AI Act screen? | No Article 5 prohibited practice or Annex I / Annex III high-risk use has been identified for the documented purpose. Article 50(1) and (2), provider/deployer roles, and the exact model/provider configuration need further review. |
+| What is the preliminary EU AI Act screen? | The current screen found no match for Article 5 or Article 6 / Annex I or III on the documented purpose. This is provision-specific; it does not mean the EU AI Act as a whole is inapplicable. Articles 50(1) and (2), provider/deployer roles, and the exact model/provider configuration need further review. |
 | Is a company decision or approval recorded? | No. This is a self-directed portfolio project; no deploying company, company representatives, independent legal reviewer, or external auditor participated in the assessment. |
 | What needs attention first? | Clarify the integrated system boundary and operator roles; then resolve Article 50 notice and output-marking questions before any broader EU-facing use. |
 
@@ -43,10 +43,10 @@ The overview uses two separate status dimensions so that a preliminary legal scr
 
 **Screening result**
 
-- **Not identified on documented purpose** — the described purpose did not reveal the trigger; this is not a definitive legal ruling.
-- **Potentially relevant — needs review** — the system or use may meet a provision, but key facts, role assignments, exceptions, or evidence remain unresolved.
-- **Not identified for current function** — the described system does not perform that function; reassess if it changes.
-- **Not assessed** — outside this retrospective’s scope.
+- **Not identified on documented purpose** — we compared the documented purpose and use context with this specific provision and found no match. This is a preliminary, provision-specific result; it does not mean the EU AI Act as a whole is inapplicable.
+- **Current functionality excludes this function** — the functionality documented for the assessed version does not include the function covered by this screen. Reassess if functionality or end use changes.
+- **Potentially relevant — needs review** — the provision may apply, but a material fact, operator role, exception, or piece of evidence remains unresolved.
+- **Not assessed — [reason]** — no conclusion was reached. State the reason with the status: **project scope excludes the use**, **outside this assessment’s scope**, or **evidence unavailable**.
 
 **Evidence / review state**
 
@@ -55,7 +55,7 @@ The overview uses two separate status dimensions so that a preliminary legal scr
 - **Unresolved** — the available information does not settle the fact or role.
 - **No independent review recorded** — no independent legal or external audit review is documented.
 
-These labels do not measure compliance. “Not identified” must not be read as “compliant” or as proof that a legal duty cannot apply.
+These labels do not measure compliance. In particular, “Not identified on documented purpose” is specific to the provision screened and must not be read as a conclusion that the EU AI Act does not apply overall.
 
 ## 4. EU AI Act screening overview
 
@@ -66,13 +66,14 @@ These labels do not measure compliance. “Not identified” must not be read as
 | Article 6 / Annex III — listed high-risk use cases | **Not identified on documented purpose** | The tool is not documented as ranking applicants, making employment decisions, assessing creditworthiness, or performing another listed Annex III purpose. | The current S02 assessment is distinct from a hiring-ranking use case. Any adaptation to applicant filtering, ranking, employee evaluation or another Annex III use requires a fresh assessment. |
 | Article 50(1) — informing people of direct AI interaction | **Potentially relevant — needs review** | The demo uses a chat interface and hosted model; provider role, actual interface, and whether AI use is obvious in context are unresolved. | Confirm the responsible provider and review the user-facing interaction and any applicable exception. |
 | Article 50(2) — marking synthetic outputs | **Potentially relevant — needs review** | The hosted model generates explanatory text; no evidence establishes the relevant provider, machine-readable marking/detectability, or exception. | Confirm the applicable duty and whether the actual output path satisfies it. Synthetic inputs or internal use do not settle the question. |
-| Article 50(3)–(4) — biometric/emotion uses, deepfakes and certain public-interest text | **Not identified for current function** | No such function or publication purpose is documented. | Re-screen if the tool gains these functions or generated text is repurposed for public-interest publication. |
-| Article 4 — AI literacy | **Applicability to a workforce unresolved** | No company staff or persons acting on a company’s behalf were assessed. | If an organization uses the system with staff or others acting on its behalf, assess context-sensitive literacy measures for the relevant provider/deployer. |
-| Chapter V — GPAI model duties | **Model-provider screen needed; not assessed** | The exact hosted model, version and provider configuration are not fixed in this record. | Identify the model/provider and relevant value-chain responsibilities; this overview makes no finding about provider compliance. |
-| Registration and Article 27 FRIA | **No trigger identified on current facts** | No high-risk use or specified deployer context is documented. | Recheck if classification, operator role, or deployment context changes. |
-| GDPR and other laws | **Not assessed for real-data or organizational use** | The documented demo is synthetic-only; no real-data privacy assessment is included. | Obtain specialist review before real personal data, customer deployment, or use in a regulated sector. |
+| Article 50(3)–(4) — biometric/emotion uses, deepfakes and certain public-interest text | **Current functionality excludes this function** | No emotion-recognition, biometric-categorisation, deepfake, or public-interest text-generation function is documented. | Reassess if the tool gains these functions or generated text is repurposed for public-interest publication. |
+| Article 4 — AI literacy | **Not assessed — project scope excludes an organizational workforce assessment** | No deploying company, staff group, or persons acting on a company’s behalf were assessed. | If an organization uses the system with staff or others acting on its behalf, assess context-sensitive literacy measures for the relevant provider/deployer. |
+| Chapter V — GPAI model duties | **Not assessed — evidence unavailable (exact hosted model/provider configuration not fixed); provider compliance is outside this assessment’s scope** | The exact hosted model, version, and provider configuration are not fixed in this record. | Identify the model/provider and relevant value-chain responsibilities; this overview makes no finding about provider compliance. |
+| Registration duties | **Not identified on documented purpose and known role facts** | No high-risk use or Article 6(3) exception reliance is identified; no other registration trigger is established by the available facts. | Recheck if classification or operator roles change. |
+| Article 27 — fundamental-rights impact assessment | **Not assessed — project scope excludes an organizational deployer assessment** | No deploying company or specified public-authority / public-service deployer context is in scope; future deployer facts are unknown. | Reassess if an organization proposes a high-risk use or another Article 27 trigger is identified. |
+| GDPR and other laws | **Not assessed — project scope excludes real personal-data processing and organizational deployment** | The documented demo is synthetic-only; no real-data privacy assessment is included. | Obtain specialist review before real personal data, customer deployment, or use in a regulated sector. |
 
-The high-risk screening does not rely on an Article 6(3) exception: no Annex III route was identified for the current documented purpose. The detailed record explains this distinction and lists the applicable-date questions.
+The high-risk screening does not rely on an Article 6(3) exception: no Annex III match was found for the documented purpose, so the exception was not assessed or relied upon. The detailed record explains this distinction and lists the applicable-date questions.
 
 ## 5. Roles and accountability
 
