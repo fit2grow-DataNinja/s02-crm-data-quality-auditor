@@ -11,6 +11,8 @@
 **Method/template basis:** [NIST project assessment record template](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/templates/nist-ai-rmf-project-assessment-record.template.md), reviewed 24 November 2026  
 **Solution repository:** [S02 CRM Data Quality Auditor — Variant 1](https://github.com/fit2grow-DataNinja/s02-crm-data-quality-auditor)  
 **Portfolio use-case:** [S02 two-variant case study](https://github.com/fit2grow-DataNinja/ai-services-portfolio/blob/main/case-studies/S02-crm-data-quality-auditor.md)
+**Business-facing overview:** [NIST AI RMF evaluation overview and status — S02 Variant 1](nist-ai-rmf-evaluation-overview-status.md)  
+**Structured project record:** [NIST AI RMF project assessment record — S02 Variant 1](nist-ai-rmf-project-assessment-record.md)
 
 > This is a retrospective, evidence-bounded learning assessment of the documented synthetic-data MVP. It is not NIST-issued, a legal assessment, a maturity rating, a compliance determination, or evidence that an organizational control operates effectively.
 
