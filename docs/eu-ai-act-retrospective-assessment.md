@@ -8,21 +8,16 @@
 **Assessment type:** Retrospective preliminary issue-spotting  
 **Legal source snapshot:** Regulation (EU) 2024/1689, consolidated EUR-Lex text dated 27 July 2026, including Regulation (EU) 2026/1744; verify the authentic Official Journal texts and EUR-Lex for later amendments before applying to a real deployment.  
 **Working method:** [EU AI Act project-evaluation matrix](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/working-documents/eu-ai-act-project-evaluation-matrix.md) (reviewed 23 November 2026; working draft, pre-v1.0) and [project-screening record template](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/working-documents/project-screening-record-template.md).  
-**Solution repository:** [S02 CRM Data Quality & Freshness Auditor — Variant 1](https://github.com/fit2grow-DataNinja/s02-crm-data-quality-auditor)
+**Solution repository:** [S02 CRM Data Quality & Freshness Auditor — Variant 1](https://github.com/fit2grow-DataNinja/s02-crm-data-quality-auditor)  
+**Business-facing summary:** [EU AI Act evaluation overview and status — S02 Variant 1](eu-ai-act-evaluation-overview-status.md)
 
 > This is a bounded, repository-authored learning assessment of the documented synthetic-data MVP. It is not legal advice, a legal classification, a compliance determination, or proof that any operator has met an obligation. Results are preliminary and depend on the stated facts, role, system boundary, jurisdiction, and legal snapshot.
 
-## Executive summary
+## How to use this record
 
-S02 Variant 1 is a self-directed portfolio MVP that audits synthetic CRM exports using deterministic Python rules and provides report content to a hosted generative model for natural-language explanation. It is read-only, is not approved for real or sensitive CRM data, and is not production-ready or approved for customer use. The assessment is limited to this described purpose and the evidence in the repository.
+For the concise, decision-oriented status and audience-specific summary, start with the [business-facing EU AI Act evaluation overview](eu-ai-act-evaluation-overview-status.md). It summarizes the current portfolio decision, screening outcomes, priority questions, and review limitations.
 
-On the documented purpose, **no Article 5 prohibited practice or Annex I / Annex III high-risk use has been identified**. The tool checks completeness and other selected CRM data-quality rules; it does not rank people, select applicants, make employment decisions, or profile natural persons. This is a preliminary screening result, not a definitive legal classification. A change to the intended purpose or operating context could change it.
-
-**Article 50 needs specific follow-up.** The conversational workflow involves a natural person interacting with a hosted model, and it generates explanatory text. Depending on the system boundary, provider role, interface, and applicable exceptions, Articles 50(1) and 50(2) may be relevant. The current record does not establish whether users are clearly informed, whether generated text is machine-readably marked and detectable, who carries the provider duty for the integrated system, or whether Article 111(4)'s transition applies. “Internal” or synthetic-data use alone does not resolve those questions.
-
-The record also flags role and scope facts that are not established by the project materials: whether the portfolio author has placed an AI system on the market or put it into service under their name, whether the local demonstration constitutes professional deployment, and which exact model/provider configuration was used. The public source-code repository by itself does not resolve those legal questions.
-
-**Bounded portfolio decision:** keep Variant 1 within its documented synthetic-data demonstration scope. Do not use real or sensitive CRM data, deploy it for customers or in production, or treat this assessment as permission to do so. Re-screen before any market offering, organizational use, new data type, new user group, or change in intended purpose. No company-level legal or risk decision is made here.
+This document is the detailed assessment behind that overview. It records the system scope, role questions, provision-by-provision screening rationale, open issues, evidence, and source snapshot. Use it when a reviewer needs to trace a summary status back to the underlying facts and sources. The overview does not replace this record, and this record does not claim independent review or legal clearance.
 
 ## 1. System, purpose, and assessment boundary
 
@@ -83,8 +78,6 @@ The framework’s current source snapshot states that Annex III high-risk requir
 
 Article 50(2) has a specific transition for certain systems placed on the market before 2 August 2026, with compliance required by 2 December 2026. The available evidence does not establish whether S02 meets the transition’s system and market-placement conditions. Do not assume the transition applies. Article 50 transparency obligations generally apply from 2 August 2026; verify the exact consolidated text and facts.
 
-**Action before any broader use:** identify the provider(s) and actual model configuration; inspect the user interface and output path; obtain provider information on machine-readable marking/detectability; document the applicable Article 50 paragraph, any exception, applicable date, responsible actor, and evidence.
-
 ### 3.4 Other AI Act duties
 
 | Separate screen | Preliminary result | S02-specific reasoning and limits |
@@ -102,41 +95,22 @@ Article 50(2) has a specific transition for certain systems placed on the market
 - **Consumer, product-safety, accessibility, cybersecurity, and sector-specific law:** no current facts establish a specific trigger, but these areas were not comprehensively assessed. Screen them if the system is marketed, integrated into a regulated product, exposed to customers, or used in a regulated sector.
 - These checks are non-exhaustive and should be performed by appropriately qualified specialists when a real organization or deployment is involved.
 
-## 4. Preliminary obligations and evidence summary
+## 4. Open questions, follow-up, and bounded decision
 
-| Topic | Classification | Current status | Evidence needed / next step |
+The screening in Section 3 is preliminary and tied to the documented synthetic-data MVP. The issues below identify facts or evidence needed to resolve the open questions; they do not declare that every item is a legal duty for the current demonstration.
+
+| Issue | What is established / unresolved | Follow-up and decision gate | Suggested owner |
 |---|---|---|---|
-| Article 5 prohibited practices | Binding-law screen | No prohibited practice identified on documented purpose; preliminary only. | Preserve intended-purpose statement; repeat screen if system use or context changes. |
-| Article 6 / Annex I and III classification | Binding-law screen | No route identified for current CRM audit purpose; not a legal determination. | Confirm system boundary and intended purpose; screen again before changed use or deployment. |
-| Provider/deployer and value-chain roles | Binding-law role definitions | Unresolved for integrated system, portfolio author, model supplier, and local demo operator. | Document who developed, offers, names, places on market, configures, and operates each component; establish dates and professional context. |
-| Article 50(1) notice | Binding-law screen | Potentially relevant; notice/obviousness and provider role not evidenced. | Review actual interface and determine responsible provider and notice treatment. |
-| Article 50(2) synthetic-output marking | Binding-law screen | Potentially relevant; machine-readable marking/detectability and applicable transition not evidenced. | Obtain exact model/provider information and test/document marking; determine whether Article 111(4) transition applies. |
-| Article 50(3)–(4) | Binding-law screen | Not identified for current documented functions and use. | Re-screen if biometric/emotion functions or public-interest publication/deepfake outputs are introduced. |
-| Article 4 AI literacy | Binding-law duty, role/context dependent | No company workforce or measures assessed. | If staff or persons acting on behalf of a provider/deployer are involved, identify them and document context-sensitive measures. |
-| GPAI Chapter V | Binding-law duties of relevant model provider | Exact model/provider is not fixed; provider compliance not assessed. | Record model name/version/provider and obtain relevant provider documentation. |
-| Registration / Article 27 FRIA | Binding-law screens | No trigger identified on current facts. | Recheck if classification, actor, or use context changes. |
-| GDPR and other law | Separate legal checks | Not assessed for real personal data or organizational deployment. | Specialist review before any real-data, customer, or production use. |
+| System boundary and operator roles | The integrated path includes the audit API, Open WebUI adapter, and hosted model. The portfolio author, local operator, model provider, and integration suppliers may have different roles; the repository and code authorship alone do not settle provider/deployer status or market-placement facts. | Record the exact system boundary, who develops/offers/operates each component, the name or trademark used, the professional context, and relevant dates. Reassess before organizational or broader EU-facing use. | Portfolio owner; any prospective deploying organization; relevant suppliers |
+| Article 50(1) — direct interaction | A person interacts through a chat interface, but the actual interface, intended interaction, responsible provider, and whether the AI nature is obvious in context are not established. | Review the actual user experience, identify the responsible provider, and document the applicable trigger, exception, timing, and any notice evidence before broader use. | Responsible provider once identified |
+| Article 50(2) — generated text and marking | The hosted model generates explanatory text. The responsible provider, applicability, exceptions, technical marking/detectability, and Article 111(4) transition facts are unresolved. | Identify the exact model and provider; confirm the applicable legal trigger and transition; obtain or test evidence for any required machine-readable marking and detectability before broader use. | Relevant provider / system owner |
+| GPAI model and supplier data path | The model/version and complete runtime configuration are not fixed; provider compliance and the actual data-processing terms have not been assessed. | Record model/version/provider and relevant technical and contractual information. Review data handling, retention, access, and transfers before organizational use or any real-data proposal. | Portfolio owner and suppliers; prospective deployer |
+| Organization-specific duties and other law | No company or workforce was assessed. Article 4 measures, Article 27 context, GDPR duties, and sector-specific laws depend on actor, people, data, use, and jurisdiction facts. | If a real organization or real data enters scope, conduct a separate role-specific legal and data-protection review; determine which specialist assessments are triggered. | Prospective deploying organization with qualified reviewers |
+| Purpose, users, data, and lifecycle changes | Current screening is limited to synthetic CRM data-quality review and explanation, without CRM write-back or production operation. | Re-screen before real/sensitive data, customer or production use, new providers/models, new user groups, automated decisions or write-back, HR/applicant ranking, or another Annex III / Article 50 use. Recheck legal sources when law or guidance changes. | Portfolio owner; prospective deploying organization |
 
-The categories above distinguish binding legal duties from unresolved facts and separate-law questions. The suggested evidence is not a universal statutory documentation package.
+**Bounded portfolio disposition:** retain Variant 1 as a synthetic-data portfolio demonstration only. Do not use real or sensitive CRM data or deploy for customers or in production on the basis of this assessment. The project is closed only for its defined MVP criteria; this is not a company risk acceptance, deployment authorization, or legal-compliance conclusion.
 
-## 5. Preliminary decision and reassessment triggers
-
-**Decision:** retain Variant 1 as a synthetic-data portfolio demonstration only. Do not use real or sensitive CRM data or deploy it for customer or production use. The project remains closed only for its documented MVP criteria; this assessment does not authorize expanded use or establish legal compliance.
-
-**Open questions for any future EU-facing use:**
-
-1. What is the precise AI-system boundary: hosted model alone, integrated S02 workflow, or both?
-2. Who developed, provides, operates, hosts, and controls each component; under whose name or trademark is the integrated system offered or put into service?
-3. When and where was it used, and in what professional or personal capacity?
-4. Which exact hosted model, version, provider, and settings were used in each demonstration?
-5. Do Article 50(1) and (2) apply to the exact system and interface, who is responsible, and what notice/marking evidence exists?
-6. Does the Article 111(4) transition apply to the relevant system and market-placement facts?
-7. Are any actual or planned inputs personal data, and what are the provider’s data handling, retention, access, and transfer conditions?
-8. Will the tool ever be adapted for HR, applicant ranking, employee evaluation, public-facing content, or another Annex III / Article 50 use?
-
-Reassess if the intended purpose, model/provider, data, affected people, user group, integration, operating authority, deployment country, market offering, or lifecycle stage changes; if real CRM data or customer use is proposed; or if the AI Act or relevant official guidance changes.
-
-## 6. Sources and evidence
+## 5. Sources and evidence
 
 ### Project evidence
 
@@ -152,6 +126,6 @@ Reassess if the intended purpose, model/provider, data, affected people, user gr
 - **Official implementation support:** [AI Act Service Desk — Article 50](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50). Its summaries are explanatory and non-binding; the Regulation controls.
 - **Framework records:** [SRC-001 — consolidated text](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-001-eu-ai-act-consolidated-text.md), [SRC-002 — high-risk guidance status](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-002-high-risk-classification-guidance.md), [SRC-003 — Article 50 guidance](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-003-article-50-transparency-guidance.md), and [SRC-008 — Article 4 AI literacy](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/sources/records/SRC-008-ai-act-article-4-ai-literacy.md).
 
-## 7. Use limitation
+## 6. Use limitation
 
 This assessment records preliminary issue-spotting against a dated legal snapshot and available project documentation. It does not establish provider/deployer status, compliance, absence of legal duties, privacy or security compliance, or readiness for real-data use. For a concrete EU deployment, confirm the current law, full facts, actors, and applicable dates with qualified legal and data-protection specialists.
