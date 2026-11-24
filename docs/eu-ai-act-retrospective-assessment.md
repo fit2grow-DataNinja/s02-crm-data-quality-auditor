@@ -10,6 +10,7 @@
 **Working method:** [EU AI Act project-evaluation matrix](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/working-documents/eu-ai-act-project-evaluation-matrix.md) (reviewed 23 November 2026; working draft, pre-v1.0) and [project-screening record template](https://github.com/fit2grow-DataNinja/ai-governance-frameworks/blob/main/working-documents/project-screening-record-template.md).  
 **Solution repository:** [S02 CRM Data Quality & Freshness Auditor — Variant 1](https://github.com/fit2grow-DataNinja/s02-crm-data-quality-auditor)  
 **Business-facing summary:** [EU AI Act evaluation overview and status — S02 Variant 1](eu-ai-act-evaluation-overview-status.md)
+**Structured project-screening record:** [EU AI Act project-screening record — S02 Variant 1](eu-ai-act-project-screening-record.md)
 
 > This is a bounded, repository-authored learning assessment of the documented synthetic-data MVP. It is not legal advice, a legal classification, a compliance determination, or proof that any operator has met an obligation. Results are preliminary and depend on the stated facts, role, system boundary, jurisdiction, and legal snapshot.
 
@@ -17,7 +18,7 @@
 
 For the concise, decision-oriented status and audience-specific summary, start with the [business-facing EU AI Act evaluation overview](eu-ai-act-evaluation-overview-status.md). It summarizes the current portfolio decision, screening outcomes, priority questions, and review limitations.
 
-This document is the detailed assessment behind that overview. It records the system scope, role questions, provision-by-provision screening rationale, open issues, evidence, and source snapshot. Use it when a reviewer needs to trace a summary status back to the underlying facts and sources. The overview does not replace this record, and this record does not claim independent review or legal clearance.
+The [project-screening record](eu-ai-act-project-screening-record.md) is the structured project-level record of system facts, operator roles, screening results, and follow-up. This retrospective assessment provides the expanded rationale, evidence analysis, legal-source snapshot, and limitations behind that record and the overview. The overview links to this retrospective assessment; it does not need a separate direct link to the screening record.
 
 ## 1. System, purpose, and assessment boundary
 
