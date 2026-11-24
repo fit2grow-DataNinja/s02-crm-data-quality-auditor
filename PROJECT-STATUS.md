@@ -14,9 +14,14 @@ The shared synthetic scenario recorded **202 contacts, 121 deals, and 92 medium-
 
 The project includes an 11-test regression suite and documented standalone API and Open WebUI demonstration scenarios. The detailed [validation record](docs/validation.md) preserves the commands, outcomes, evidence boundaries, and limitations.
 
-## Retrospective NIST AI RMF assessment
+## Governance assessments
 
-A bounded retrospective assessment of Variant 1 was added at [docs/nist-ai-rmf-retrospective-assessment.md](docs/nist-ai-rmf-retrospective-assessment.md), using the repository-authored NIST AI RMF 1.0 application matrix and record template. It assesses only documented portfolio evidence. Because no company or company representatives were involved, target states are proposed portfolio targets, not organization-approved goals. The assessment does not change the closed MVP scope or authorize real-data/production use.
+Two bounded retrospective analyses are complete for the documented synthetic MVP scope:
+
+- **EU AI Act:** preliminary screening accepted by the portfolio owner. The project-specific [overview](docs/eu-ai-act-evaluation-overview-status.md), [screening record](docs/eu-ai-act-project-screening-record.md), and [retrospective assessment](docs/eu-ai-act-retrospective-assessment.md) preserve the results and limits.
+- **NIST AI RMF:** all 72 Core subcategories have a disposition. The [business-facing overview](docs/nist-ai-rmf-evaluation-overview-status.md) and [structured project assessment record](docs/nist-ai-rmf-project-assessment-record.md) were accepted by the portfolio owner. The detailed [retrospective assessment](docs/nist-ai-rmf-retrospective-assessment.md) contains the row-level rationale and remains marked draft for review.
+
+No company representatives participated. NIST Target Profile entries are proposed portfolio targets, not organizational goals. These assessments do not change the closed MVP scope or authorize real-data or production use.
 
 ## Scope and limitations
 
