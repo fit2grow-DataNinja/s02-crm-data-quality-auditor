@@ -6,10 +6,10 @@
 **Assessment date:** 24 November 2026  
 **Assessed system:** S02 CRM Data Quality & Freshness Auditor — Variant 1  
 **Audience:** Managers, decision-makers, external auditors and reviewers  
-**Primary source:** [EU AI Act retrospective assessment — S02 Variant 1](eu-ai-act-retrospective-assessment.md)  
+**Detailed assessment and evidence source:** [EU AI Act retrospective assessment — S02 Variant 1](eu-ai-act-retrospective-assessment.md)  
 **Legal snapshot:** Regulation (EU) 2024/1689, consolidated EUR-Lex text dated 27 July 2026, including Regulation (EU) 2026/1744. Verify the current authentic text before relying on this overview for a real deployment.
 
-> This is a concise, business-facing view of a self-directed portfolio assessment. It is not legal advice, an independent audit, a compliance determination, or approval to deploy the system. The detailed assessment is the source for its screening rationale and evidence.
+> This is a concise, business-facing view of a self-directed portfolio assessment. It is not legal advice, an independent audit, a compliance determination, or approval to deploy the system. The linked detailed assessment is the source for provision-level rationale, evidence, open issues, and legal-source traceability; this overview summarizes those findings for business-facing review.
 
 ## 1. Executive decision panel
 
