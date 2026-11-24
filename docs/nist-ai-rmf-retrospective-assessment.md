@@ -14,6 +14,19 @@
 
 > This is a retrospective, evidence-bounded learning assessment of the documented synthetic-data MVP. It is not NIST-issued, a legal assessment, a maturity rating, a compliance determination, or evidence that an organizational control operates effectively.
 
+## Executive summary
+
+This retrospective applies NIST AI RMF 1.0 to S02 Variant 1, a self-directed portfolio MVP that uses deterministic Python rules to identify data-quality findings in synthetic CRM exports and a hosted generative model to explain report content. The tool is read-only. It is not approved for real or sensitive customer data, production deployment, or customer use.
+
+The assessment dispositioned all 72 NIST AI RMF Core subcategories: **9 Main focus points, 26 Sub-focus points, 20 not selected with rationale, and 17 unable to assess because evidence was unavailable or outside the project scope.** NIST AI 600-1, the Generative AI Profile, is used only as partial input for the explanation component; it does not cover the whole CRM audit workflow or set the project’s targets.
+
+The evidence documents a useful boundary: Python determines findings; the model explains them. A synthetic demonstration produced 92 medium-severity missing-owner review flags from 202 contacts and 121 deals under a provisional rule. Those flags are not confirmed data errors. The assessment also records 11 passing regression tests from a user-reported local run; it did not rerun them, and no independent or clean-environment verification is available.
+
+**Key gaps before any broader use:** the planned SEC-001 sensitivity gate, fail-closed handling, and manual approval are not implemented or tested; explanation fidelity has not been independently evaluated; and there is no production security, real-data privacy/provider review, formal human review/override, or operational monitoring and incident-feedback evidence.
+
+**Bounded decision:** retain S02 Variant 1 as a synthetic-data portfolio demonstration only. Do not use real or sensitive CRM data, deploy it for customers or in production, write back to CRM, or treat AI explanations as verified audit findings or as the sole basis for business action. Any expansion requires a separate review with context-appropriate evidence and accountable organizational input. All Target Profile statements here are portfolio proposals, not company-agreed targets or organizational risk acceptance.
+
+
 ## 1. Scope and system context
 
 S02 Variant 1 is a self-directed portfolio MVP. It accepts synthetic CRM contact, deal, and optional association CSV exports through a Python/FastAPI audit service. Deterministic Python rules produce a ZIP report with structured findings. An Open WebUI Workspace Tool passes report content to a configured hosted model for natural-language explanation. The service does not write to CRM records and is not approved for real or sensitive customer data.
