@@ -1,7 +1,7 @@
 # Business-facing EU AI Act evaluation overview and status — S02 Variant 1
 
 **Record ID:** S02-EUAI-OVERVIEW-V1-2026-11-24  
-**Document status:** Draft for review  
+**Document status:** Accepted by the portfolio owner for the documented MVP scope (24 November 2026)  
 **Assessment status:** Retrospective portfolio screening; preliminary  
 **Assessment date:** 24 November 2026  
 **Assessed system:** S02 CRM Data Quality & Freshness Auditor — Variant 1  
