@@ -1,7 +1,7 @@
 # Business-facing NIST AI RMF evaluation overview and status — S02 Variant 1
 
 **Record ID:** S02-NIST-OVERVIEW-V1-2026-11-24  
-**Document status:** Draft for portfolio-owner review  
+**Document status:** Accepted by the portfolio owner for the stated portfolio purpose (24 November 2026)  
 **Assessment status:** Retrospective portfolio assessment; bounded scope  
 **Assessment date:** 24 November 2026  
 **Assessed system:** S02 CRM Data Quality & Freshness Auditor — Variant 1  
